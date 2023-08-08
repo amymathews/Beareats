@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Navbar</title>
+	<link rel="stylesheet" href="hub.css" />
+    
+</head>
+<body>
+	<div class="app">
+		<div class="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+			</div>
+		</div>
+        
+		<aside class="sidebar">
+		
+			<nav class="menu">
+                <div style="display: flex;">
+                    <img src="static/amir.png" style="height: 5vh ;width: 3vw;margin-left: 5% ; margin-top: 9%; border-radius: 100%;">
+                <a href="./profile-page.html" class="menu-item">Profile</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/home-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 7%;" >
+				    <a href="./makeapost.html" class="menu-item is-active">Home</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/new-post-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">New Post</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/reward-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">Rewards</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/save-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">Saved</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/settings-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+                <a href="#" class="menu-item">Settings</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/most-liked.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;" >    
+                <a href="#" class="menu-item">Most Liked Posts</a>
+                </div>
+			</nav>
+            
+		</aside>
+        
+		<main class="posts_container">
+			<!-- <h1>Welcome, Human</h1>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, explicabo!</p> -->
+            
+            <div class="posts">
+                <!-- <h2 class="posts_title">Hub Posts</h2> -->
+                <div class = "post">
+                    <a href="./clickpost.html"></a>
+                    <div class="post-head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <a href="#">
+                                    <img src="./food.png" alt="postpicture">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 style="margin-left: 7px; margin-top: 17px;">Amy Mathews</h3>
+                                <small style="margin-left: 7px; margin-top: 17px;">Berkeley, 15 minutes ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="./food.png" alt="postpicture">
+                    </div>
+                    <div class="action-buttons">
+                        <div class="interaction-buttons" >
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-dots"></i></span>
+                        </div>
+                    </div>
+                    <div class="liked-by">
+                        <span><img src = "./trump-circle.png"></span>
+                        <p style="margin-left: 7px;">Liked by Ricky and 234 others</p>
+                    </div>
+                    <div class="caption">
+                        <p style="margin-left: 7px;"> <b>Amy Mathews</b> Look at my lunch guys</p>
+                    </div>
+                    <div class="text-muted" style="margin-left: 7px">view all 10 comments</div>
+                </div>
+                <div class = "post">
+                    <div class="post-head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <a href="#">
+                                    <img src="./food.png" alt="postpicture">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 style="margin-left: 7px;margin-top: 17px;">Amy Mathews</h3>
+                                <small style="margin-left: 7px; margin-top: 17px;">Berkeley, 15 minutes ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="./food.png" alt="postpicture">
+                    </div>
+                    <div class="action-buttons">
+                        <div class="interaction-buttons" >
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-dots"></i></span>
+                        </div>
+                    </div>
+                    <div class="liked-by">
+                        <span><img src = "./trump-circle.png"></span>
+                        <p style="margin-left: 7px;">Liked by Ricky and 234 others</p>
+                    </div>
+                    <div class="caption">
+                        <p style="margin-left: 7px;"> <b>Amy Mathews</b> Look at my lunch guys</p>
+                    </div>
+                    <div class="text-muted" style="margin-left: 7px">view all 10 comments</div>
+                </div>
+                <div class = "post">
+                    <div class="post-head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <a href="#">
+                                    <img src="./food.png" alt="postpicture">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 style="margin-left: 7px;margin-top: 17px;">Amy Mathews</h3>
+                                <small style="margin-left: 7px; margin-top: 17px;">Berkeley, 15 minutes ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="./food.png" alt="postpicture">
+                    </div>
+                    <div class="action-buttons">
+                        <div class="interaction-buttons" >
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-dots"></i></span>
+                        </div>
+                    </div>
+                    <div class="liked-by">
+                        <span><img src = "./trump-circle.png"></span>
+                        <p style="margin-left: 7px;">Liked by Ricky and 234 others</p>
+                    </div>
+                    <div class="caption">
+                        <p style="margin-left: 7px;"> <b>Amy Mathews</b> Look at my lunch guys</p>
+                    </div>
+                    <div class="text-muted" style="margin-left: 7px">view all 10 comments</div>
+                </div>
+            </div>
+		</main>
+	</div>
+    
+	<script>
+		const menu_toggle = document.querySelector('.menu-toggle');
+		const sidebar = document.querySelector('.sidebar');
+
+		menu_toggle.addEventListener('click', () => {
+			menu_toggle.classList.toggle('is-active');
+			sidebar.classList.toggle('is-active');
+		});
+	</script>
+</body>
+</html>
