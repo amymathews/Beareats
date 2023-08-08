@@ -10,17 +10,7 @@ function showNextImage() {
 
 setInterval(showNextImage, 5000); // Change slide every 5 seconds (adjust as needed)
 
-//toggle between login and sign up form
-
-// JavaScript for slideshow animation
-
-// Your existing slideshow code
-
-// JavaScript for slideshow animation
-
-// JavaScript for slideshow animation
-
-// Your existing slideshow code
+// toggle between login and sign up
 
 function toggleSignUp() {
     const loginForm = document.getElementById('loginForm');
@@ -36,6 +26,43 @@ function toggleSignUp() {
         signUpForm.style.display = 'block';
     }
 }
+
+//Upload image code 
+const uploadArea = document.getElementById('uploadArea');
+const postButton = document.getElementById('postButton');
+
+uploadArea.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadArea.classList.add('dragover');
+});
+
+uploadArea.addEventListener('dragleave', () => {
+    uploadArea.classList.remove('dragover');
+});
+
+uploadArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadArea.classList.remove('dragover');
+
+    const file = e.dataTransfer.files[0];
+    if (file.type.startsWith('image/')) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        img.style.maxWidth = '100%';
+        uploadArea.innerHTML = '';
+        uploadArea.appendChild(img);
+    } else {
+        uploadArea.innerHTML = '<p>Unsupported file type</p>';
+    }
+});
+
+postButton.addEventListener('click', () => {
+    const img = uploadArea.querySelector('img');
+    if (img) {
+        // Here you can perform the post action
+        alert('Image posted!');
+    }
+});
 
 
 

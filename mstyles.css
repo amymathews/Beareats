@@ -1,0 +1,348 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.upload-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    /* width: 400px; */
+    margin: auto;
+    /* justify-content: center; */ /* Remove this line */
+    /* align-items: center; */ /* Remove this line */
+}
+
+.upload-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.upload-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.upload-area {
+    border: 2px dashed #e0e0e0;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #fafafa;
+    margin-right: 20px;
+}
+
+.upload-area p {
+    color: #999;
+    font-size: 16px;
+    margin: 0;
+}
+
+.upload-area.dragover {
+    border-color: #007bff;
+    background-color: #f0faff;
+}
+
+.caption-area {
+    flex: 1;
+}
+
+.caption-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+
+.post-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.post-button:hover {
+    background-color: #0056b3;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.app {
+	display: flex;
+	min-height: 100vh;
+}
+
+.menu-toggle {
+	display: none;
+	position: fixed;
+	top: 1rem;
+	right: 2rem;
+	width: 60px;
+	height: 60px;
+	border-radius: 99px;
+	background-color: #2e3047;
+	cursor: pointer;
+}
+
+.hamburger {
+	position: relative;
+	top: calc(50% - 2px);
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 32px;
+}
+
+.hamburger > span,
+.hamburger > span::before,
+.hamburger > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 99px;
+  background-color: #FFF;
+  transition-duration: .25s;
+}
+
+.hamburger > span::before {
+  content: '';
+  top: -8px;
+}
+.hamburger > span::after {
+  content: '';
+  top: 8px;
+}
+.menu-toggle.is-active .hamburger > span {
+  transform: rotate(45deg);
+}
+.menu-toggle.is-active .hamburger > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+.menu-toggle.is-active .hamburger > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.posts_title {
+    color: black;
+    margin: 4% auto; /* This centers the text horizontally */
+    font-size: 2vh;
+    text-align: center;
+}
+
+
+.posts_title::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    /* background-color: darkblue; */
+    left: 0;
+    bottom: -10px;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 66vw;
+    margin-bottom: 5%;
+}
+.post {
+    box-shadow: 0 4px 12px -4PX rgba(0, 0, 0, 0.2);
+    transition: all 500ms ease;
+}
+.post:hover{
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px -2PX rgba(0, 0, 0, 0.2);
+}
+
+
+
+.reward-info {
+    position: relative;
+    display: inline-block;
+    margin: 3%;
+}
+
+.reward-info .reward-info-text {
+    visibility: hidden;
+    width: 100px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.reward-info:hover .reward-info-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 850px) {
+    .posts{
+        grid-template-columns: 1fr;
+    }
+    .posts_container {
+        max-width: 600px;
+    }
+}
+.sidebar {
+    flex: 1 1 0;
+    max-width: 245px;
+    min-width: 160px;
+    padding: 2rem 1rem 1rem 1rem;
+    background-color: #003262;
+    border-color: black;
+}
+
+.sidebar h3 {
+    color: #707793;
+    font-size: 0.90rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+.sidebar .menu {
+    margin: 0 -1rem;
+    position: fixed;
+}
+
+.sidebar .menu .menu-item {
+    display: block;
+    padding: 1em;
+    color: #FFF;
+    text-decoration: none;
+    transition: 0.2s linear;
+    margin: 5%;
+    font-size: 2.5vh;
+    font-weight: 100;
+}
+
+.sidebar .menu .menu-item:hover,
+.sidebar .menu .menu-item.is-active {
+    color: #FDB515;
+    border-right: 5px solid #FDB515;
+}
+
+.sidebar .menu .menu-item:hover {
+    border-right: 5px solid #FDB515;
+}
+
+.content {
+    flex: 1 1 0;
+    padding: 2rem;
+}
+
+.content h1 {
+    color: #3C3F58;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    color: #707793;
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: block;
+    }
+    .content {
+        padding-top: 8rem;
+    }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        height: 100vh;
+        width: 100%;
+        max-width: 200px;
+        transition: 0.2s linear;
+    }
+    
+    .sidebar.is-active {
+        left: 0;
+    }
+    
+    .profile-picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    }
+}
+.posts_container {
+    max-width: 90vw;
+    font-family: sans-serif;
+    margin: 0 auto;
+    margin-left: 7%;
+}
+.post img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.Post_container {
+    display: grid;
+}
+.divider-line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+.make-post-container {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.add-ingredients-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-ingredients-button:hover {
+    background-color: #0056b3;
+}
