@@ -18,7 +18,7 @@ const scrapedContent = await divElement.getText();
 await browser.deleteSession();
 
 const fs = require('fs');
-const htmlTemplate = fs.readFileSync('output.html', 'utf8');
+const htmlTemplate = fs.readFileSync('profile-page.html', 'utf8');
 const modifiedHtml = htmlTemplate.replace('<div id="scraped-content"></div>', `<div id="scraped-content">${scrapedContent}</div>`);
-fs.writeFileSync('output.html', modifiedHtml, 'utf8');
+fs.writeFileSync('profile-page.html', modifiedHtml, 'utf8');
 })();
