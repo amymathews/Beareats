@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Navbar</title>
+	<link rel="stylesheet" href="profile-page.css" />
+</head>
+<body>
+	<div class="app">
+		<div class="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+			</div>
+		</div>
+
+        <!-- THIS IS THE SIDEBAR CODE -->
+        <style>
+
+            .sidebar {
+                flex: 1 1 0;
+                max-width: 245px;
+                min-width: 160px;
+                padding: 2rem 1rem 1rem 1rem;
+                background-color: #003262;
+                border-color: black;
+            }
+
+            .sidebar h3 {
+                color: #707793;
+                font-size: 0.90rem;
+                text-transform: uppercase;
+                margin-bottom: 0.5em;
+            }
+
+            .sidebar .menu {
+                margin: 0 -1rem;
+                position: fixed;
+            }
+
+            .sidebar .menu .menu-item {
+                display: block;
+                padding: 1em;
+                color: #FFF;
+                text-decoration: none;
+                transition: 0.2s linear;
+                margin: 5%;
+                font-size: 2.5vh;
+                font-weight: 100;
+            }
+
+            .sidebar .menu .menu-item:hover,
+            .sidebar .menu .menu-item.is-active {
+                color: #FDB515;
+                border-right: 5px solid #FDB515;
+            }
+
+            .sidebar .menu .menu-item:hover {
+                border-right: 5px solid #FDB515;
+            }
+
+            .content {
+                flex: 1 1 0;
+                padding: 2rem;
+            }
+
+            .content h1 {
+                color: #3C3F58;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .content p {
+                color: #707793;
+            }
+
+            @media (max-width: 600px) {
+                .sidebar {
+                    max-width: 200px;
+                }
+            }
+
+            @media (max-width: 850px) {
+                .menu-toggle {
+                    display: block;
+                }
+                .content {
+                    padding-top: 8rem;
+                }
+                .sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: -300px;
+                    height: 100vh;
+                    width: 100%;
+                    max-width: 200px;
+                    transition: 0.2s linear;
+                }
+                
+                .sidebar.is-active {
+                    left: 0;
+                }
+                
+                .profile-picture {
+                width: 100%;
+                height: 100%;
+                border-radius: 9999px;
+                }
+            }
+            .posts_container {
+                max-width: 90vw;
+                font-family: sans-serif;
+                margin: 0 auto;
+                margin-left: 7%;
+            }
+            .post img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+            .Post_container {
+                display: grid;
+            }
+        </style>
+        
+		<aside class="sidebar">
+		
+			<nav class="menu">
+                <div style="display: flex;">
+                    <img src="../static/amir.png" style="height: 5vh ;width: 3vw;margin-left: 5% ; margin-top: 9%; border-radius: 100%;">
+                <a href="#" class="menu-item">Profile</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="../static/home-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 7%;" >
+				    <a href="#" class="menu-item is-active">Home</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/new-post-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">New Post</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/reward-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">Rewards</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/save-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">Saved</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/settings-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+                <a href="#" class="menu-item">Settings</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/most-liked.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;" >    
+                <a href="#" class="menu-item" style="padding-left: 4%;">Most Liked Posts</a>
+                </div>
+                <div style="display: flex;"">
+                    <img src="static/meter.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;">    
+                    <a href="#" class="menu-item" style="margin-left: 2%;"> RSF Meter </a>
+                </div>       
+                <div class="scraped-content"> </div>                         
+			</nav>
+		</aside>
+
+        <script>
+            const menu_toggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+    
+            menu_toggle.addEventListener('click', () => {
+                menu_toggle.classList.toggle('is-active');
+                sidebar.classList.toggle('is-active');
+            });
+        </script>
+
+        <!-- THIS IS THE SIDEBAR CODE -->
+
+
+
+        
+		<main class="posts_container">
+
+            <div class = "profile-information" style = "display: flex; margin-left: 0%;">
+                <img src="static/amir.png" style="height: 20vh ; width: 12vw; margin-top: 5%; border-radius: 100%; border: 4px solid gold;">
+                <div class = "profile-name" style="font-size: 5vh; margin: 5%;">
+                    Amir Shaker
+                    <div class="pronouns" style="font-size: 2.5vh; color: rgb(79, 79, 79); margin-bottom: 2% ;"> 
+                        He/Him
+                    </div>
+                    <div class = "profile-bio" style="font-size: 2vh; align-items: center; justify-content: center;"> 
+                        420 <br> Gym Rat <br>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div style= "display:flex; text-align: center; justify-content: center; font-size: 3vh; margin-top: 2%; font-weight: bold;">
+                Awards
+            </div>
+            <div class = "rewards-display" style="display: flex; z-index: -1;">
+                <div class = "reward-info" style="margin-left: 0%;">
+                    <img src="static/fire-icon.png" class="reward-icon" style="height: 15vh; width: 10vw; margin: 2%; margin-top: 4%; z-index: -1;">
+                    <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+                </div>
+                <div class = "reward-info"> 
+                    <img src="static/diet-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                    <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+                </div>
+                <div class = "reward-info">
+                    <img src="static/leaf-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                    <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+                </div>
+                <div class = "reward-info">
+                    <img src="static/steak-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                    <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+                </div>
+                <div class = "reward-info">
+                    <img src="static/vegetables-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                    <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+                </div>
+
+                
+
+            </div>
+			<!-- <h1>Welcome, Human</h1>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, explicabo!</p> -->
+            <div style="text-align: center; font-size: 3vh; margin-top: 2%;margin-bottom: 3%; font-weight: bold"> Recipes </div>
+            <div class="posts">
+                <div class = "post">
+                    <a href="#">
+                        <img src="static/food1.png" alt="postpicture">
+                    </a>
+                    <div class="posts_title">
+                        Ramen
+                    </div>
+                </div>
+                <div class = "post">
+                    <a href="#">
+                        <img src="static/food2.png" alt="postpicture">
+                    </a>
+                    <div class="posts_title">
+                        Ramen
+                    </div>
+                </div>
+                <div class = "post">
+                    <a href="#">
+                        <img src="static/food3.png" alt="postpicture">
+                    </a>
+                    <div class="posts_title">
+                        Ramen
+                    </div>
+                </div>
+                <div class = "post">
+                    <a href="#">
+                        <img src="static/food4.png" alt="postpicture">
+                    </a>
+                    <div class="posts_title">
+                        Ramen
+                    </div>
+                </div>
+            </div>
+		</main>
+	</div>
+
+</body>
+</html>
