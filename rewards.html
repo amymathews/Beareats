@@ -6,51 +6,82 @@
     <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background">
-        <div class="profile">
-            <h1>Welcome to Your Profile</h1>
-            <div class="profile-info">
-                <p><strong>Username:</strong> JohnDoe</p>
-                <p><strong>Level:</strong> 5</p>
-                <p><strong>Points:</strong> 300</p>
-            </div>
-            <div class="badges">
-                <h2>Badges</h2>
-                <div class="badge-item">
-                    <img src="badge-comment-king.png" alt="Comment King Badge">
-                    <p>Comment King</p>
+    <div class="app">
+		<div class="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+			</div>
+		</div>
+        
+		<aside class="sidebar">
+		
+			<nav class="menu">
+                <div style = 
+                <div style="display: flex;">
+                    <img src="static/amir.png" style="height: 5vh ;width: 3vw;margin-left: 5% ; margin-top: 9%; border-radius: 100%;">
+                <a href="#" class="menu-item">Profile</a>
                 </div>
-                <div class="badge-item">
-                    <img src="badge-posting-queen.png" alt="Posting Queen Badge">
-                    <p>Posting Queen</p>
+                <div style="display: flex;">
+                    <img src="static/home-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 7%;" >
+				    <a href="#" class="menu-item is-active">Home</a>
                 </div>
-                <!-- Add more badge items here -->
-            </div>
-            <div class="roadmap">
-                <h2>Roadmap to Big Rewards</h2>
-                <p>Level: Beginner</p>
-                <ul>
-                    <li>Make 10 posts</li>
-                    <li>Receive 50 likes</li>
-                </ul>
-                <p>Level: Intermediate</p>
-                <ul>
-                    <li>Make 50 posts</li>
-                    <li>Receive 200 likes</li>
-                    <li>Receive 10 comments</li>
-                </ul>
-                <p>Level: Pro</p>
-                <ul>
-                    <li>Make 100 posts</li>
-                    <li>Receive 500 likes</li>
-                    <li>Receive 50 comments</li>
-                </ul>
-            </div>
-            <button class="claim-button">Claim Reward</button>
-        </div>
-        <!-- <footer>
-            <p>Bear Eats &copy; 2023 - All rights reserved</p>
-        </footer> -->
+                <div style="display: flex;">
+                    <img src="static/new-post-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">New Post</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/reward-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">Rewards</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/save-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">Saved</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/settings-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+                <a href="#" class="menu-item">Settings</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/most-liked.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;" >    
+                <a href="#" class="menu-item">Most Liked Posts</a>
+                </div>
+			</nav>
+            
+		</aside>
     </div>
+
+    <div class="profile">
+        <h1>User Profile</h1>
+        <div class="profile-info">
+            <!-- Profile picture and user info -->
+        </div>
+        
+        <div class="badges">
+            <h2>Badges</h2>
+            <div class="badge-item">
+                <img src="badge1.png" alt="Badge 1">
+                <p>Language Beginner</p>
+            </div>
+            <div class="badge-item">
+                <img src="badge2.png" alt="Badge 2">
+                <p>Intermediate Linguist</p>
+            </div>
+            <!-- Add more badge items as needed -->
+        </div>
+        
+        <div class="roadmap">
+            <h2>Rewards</h2>
+            <ul>
+                <li>Unlock new lessons</li>
+                <li>Access advanced topics</li>
+                <li>Earn bonus points</li>
+                <!-- Add more reward items as needed -->
+            </ul>
+        </div>
+        
+        <button class="claim-button">Claim Reward</button>
+    </div>
+    
+    
 </body>
 </html>
