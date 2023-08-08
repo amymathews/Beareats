@@ -2,19 +2,43 @@
 <html>
 <head>
     <title>Beareats - Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background">
+        <div class="slideshow-container">
+            <div class="slideshow">
+                <img src="images/veggies.jpeg" alt="Image 1">
+                <img src="images/pizza.jpeg" alt="Image 2">
+                <img src="images/lemon.jpeg" alt="Image 3">
+                <img src="images/cherries.jpeg" alt="Image 4">
+                <img src="images/fish.jpeg" alt="Image 5">
+                <img src="images/soup.jpeg" alt="Image 6">
+                <img src="images/fv.jpeg" alt="Image 7">
+                <img src="images/sushi.jpeg" alt="Image 8">
+                <img src="images/bimbap.jpeg" alt="Image 9">
+                <img src="images/spagetti.jpeg" alt="Image 10">
+            </div>
+        </div>
+        <div class="login-container" id="loginContainer">
+            <h1>Welcome to Beareats</h1>
+            <form id="loginForm">
+                <input type="text" placeholder="Username or Email">
+                <input type="password" placeholder="Password">
+                <button type="submit">Login</button>
+                <p class="toggle-link" onclick="toggleSignUp()">Don't have an account? Sign up</p>
+            </form>
+            <form id="signUpForm">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <button type="submit">Sign Up</button>
+                <p class="toggle-link" onclick="toggleSignUp()">Already have an account? Login</p>
+            </form>
+        </div>
     </div>
-
-    <div class="login-container">
-        <h1>Welcome to Beareats</h1>
-        <form>
-            <input type="text" placeholder="Username or Email">
-            <input type="password" placeholder="Password">
-            <button type="submit">Login</button>
-        </form>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
