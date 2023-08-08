@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Navbar</title>
+	<link rel="stylesheet" href="clickpost.css" />
+    <style>
+        .main-content {
+            flex: 3;  /* Adjust this value if you want to change the width */
+            padding: 2rem;
+            background-color: #f4f4f4;
+        }
+
+        .title-div {
+            background-color: #555;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .image-info-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image-div {
+            flex: 1;
+            border-radius: 10px;
+            margin-right: 20px;
+            background-color: #003262;
+        }
+
+        .info-div {
+            flex: 2;
+            background-color: #777;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .small-div-1,
+        .small-div-2,
+        .small-div-3 {
+            background-color: #f9ffcb;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .small-div-2 {
+            background-color: #FFFDD0;
+        }
+
+        .small-div-3 {
+            background-color: #FFFDD0;
+        }
+
+        .inner-small-div {
+            background-color: #aaa;  /* different color for inner div */
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .list-container {
+            background-color: #fefefe;  /* different color for list container */
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .list-container ul {
+            padding-left: 20px;  /* Adjust this value as needed */
+            list-style-type: disc; /* Ensure bullet points are shown */
+            margin: 0; /* Reset default margin */
+        }
+
+        
+        .steps-list-container {
+            background-color: #fefefe;  /* different color for list container */
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .steps-list-container ol {
+            padding-left: 20px;  /* Adjust this value as needed */
+            margin: 0; /* Reset default margin */
+        }
+
+        .actual-image {
+            flex: 4;
+            background-color: rgb(34, 189, 34);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center; /* Vertically center the image */
+            justify-content: center; /* Horizontally center the image */
+        }
+
+        .actual-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .comments {
+            flex: 4;
+            background-color: rgb(34, 163, 189);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center; /* Vertically center the image */
+            justify-content: center; /* Horizontally center the image */
+            margin-top: 20px;
+        }
+
+        .image-title {
+            flex: 1;
+            background-color: #767;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 0px;
+            text-align: center;
+        }
+
+        .like-button {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .heart-icon {
+            font-size: 24px;
+            margin-right: 8px;
+            transition: all 0.3s;
+            /* Text shadow to provide the illusion of a solid background color */
+            text-shadow: 0 0 0 transparent;
+            /* Outline color */
+            color: black;
+            /* Additional properties to make the "fill" more solid */
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .heart-icon:hover {
+            color: gray;
+        }
+
+        .liked .heart-icon {
+            color: red;
+        }
+
+
+        .save-button {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .save-icon {
+            font-size: 24px;
+            margin-right: 8px;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            color: black;
+        }
+
+        .save-icon:hover {
+            color: gray;
+        }
+
+        .saved .save-icon {
+            color: green;
+        }
+
+
+    </style>
+
+    
+
+</head>
+<body>
+	<div class="app">
+		<div class="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+			</div>
+		</div>
+
+        <!-- THIS IS THE SIDEBAR CODE -->
+        <style>
+
+            .sidebar {
+                flex: 1 1 0;
+                max-width: 245px;
+                min-width: 160px;
+                padding: 2rem 1rem 1rem 1rem;
+                background-color: #003262;
+                border-color: black;
+            }
+
+            .sidebar h3 {
+                color: #707793;
+                font-size: 0.90rem;
+                text-transform: uppercase;
+                margin-bottom: 0.5em;
+            }
+
+            .sidebar .menu {
+                margin: 0 -1rem;
+                position: fixed;
+            }
+
+            .sidebar .menu .menu-item {
+                display: block;
+                padding: 1em;
+                color: #FFF;
+                text-decoration: none;
+                transition: 0.2s linear;
+                margin: 5%;
+                font-size: 2.5vh;
+                font-weight: 100;
+            }
+
+            .sidebar .menu .menu-item:hover,
+            .sidebar .menu .menu-item.is-active {
+                color: #FDB515;
+                border-right: 5px solid #FDB515;
+            }
+
+            .sidebar .menu .menu-item:hover {
+                border-right: 5px solid #FDB515;
+            }
+
+            .content {
+                flex: 1 1 0;
+                padding: 2rem;
+            }
+
+            .content h1 {
+                color: #3C3F58;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .content p {
+                color: #707793;
+            }
+
+            @media (max-width: 600px) {
+                .sidebar {
+                    max-width: 200px;
+                }
+            }
+
+            @media (max-width: 850px) {
+                .menu-toggle {
+                    display: block;
+                }
+                .content {
+                    padding-top: 8rem;
+                }
+                .sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: -300px;
+                    height: 100vh;
+                    width: 100%;
+                    max-width: 200px;
+                    transition: 0.2s linear;
+                }
+                
+                .sidebar.is-active {
+                    left: 0;
+                }
+                
+                .profile-picture {
+                width: 100%;
+                height: 100%;
+                border-radius: 9999px;
+                }
+            }
+            .posts_container {
+                max-width: 90vw;
+                font-family: sans-serif;
+                margin: 0 auto;
+                margin-left: 7%;
+            }
+            .post img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+            .Post_container {
+                display: grid;
+            }
+        </style>
+        
+		<aside class="sidebar">
+		
+			<nav class="menu">
+                <div style="display: flex;">
+                    <img src="static/amir.png" style="height: 9vh ;width: 6vw;margin-left: 5% ; border-radius: 99999px;">
+                <a href="#" class="menu-item">Profile</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/home-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 7%;" >
+				    <a href="#" class="menu-item is-active">Home</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/new-post-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">New Post</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/reward-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">Rewards</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/save-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+				<a href="#" class="menu-item">Saved</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/settings-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
+                <a href="#" class="menu-item">Settings</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/most-liked.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;" >    
+                <a href="#" class="menu-item">Most Liked Posts</a>
+                </div>
+			</nav>
+            
+		</aside>
+
+        <script>
+            const menu_toggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+    
+            menu_toggle.addEventListener('click', () => {
+                menu_toggle.classList.toggle('is-active');
+                sidebar.classList.toggle('is-active');
+            });
+        </script>
+
+        <!-- THIS IS THE SIDEBAR CODE -->
+
+        <div class="main-content">
+            <div class="title-div">Beef and Broccoli Stir Fry
+                <div>by </div>
+            </div>
+            
+            <div class="image-info-container">
+                <div class="image-div">
+                    <div class="actual-image">
+                        <!-- image here -->
+                        <img src="Beef-and-Broccoli-3-728x1092.jpg" alt="Beef and Broccoli Stir Fry">
+                    </div>
+                    <div class="image-title">
+                        <div class="like-button" onclick="toggleLike()">
+                            <span class="heart-icon">&#9825;</span>
+                            <span class="like-count">34</span>
+                        </div>
+
+                        <div class="save-button" onclick="toggleSave()">
+                            <span class="save-icon">&#128190;</span>
+                            <span class="save-count">0</span>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        comments here
+                    </div>
+
+                </div>
+                <div class="info-div">
+                    <!-- info goes here -->
+                    <div class="small-div-1">
+                        <div>Calories: 217</div>
+                        <div>Macros: Protein: 18g Carbs: 13g Fat: 10g</div>
+                    </div>
+                    <div class="small-div-2">Ingredients
+                        <div class="list-container">
+                            <ul>
+                                <li>1/2 tablespoon avocado oil</li>
+                                <li>1 pound flank steak</li>
+                                <li>7 cups broccoli florets (415 grams)</li>
+                                <li>1/3 cup coconut aminos</li>
+                                <li>1/3 cup chicken broth</li>
+                                <li>3 tablespoons lime juice</li>
+                                <li>1 tablespoon toasted sesame oil</li>
+                                <li>3 cloves garlic, minced</li>
+                                <li>1 tablespoon grated ginger </li>
+                                <li>1/2 teaspoon red pepper flakes</li>
+                                <li>1 tablespoon arrowroot flour</li>
+                                <li>salt and pepper, to taste</li>
+                                <li>optional toppings: sesame seeds, green onions</li>
+                            </ul>
+                        </div>
+                        <div class="inner-small-div">Instacart link</div>
+                    </div>
+                    <div class="small-div-3">Instructions
+                        <div class="steps-list-container">
+                            <ol>
+                                <li>In a small bowl or jar, make the sauce by combining the coconut aminos, broth, lime juice, sesame oil, garlic, ginger, red pepper flakes, and pepper. Add two tablespoons of the sauce in another small bowl along with the arrowroot flour and mix well. Set both of them aside.</li>
+                                <li>Liberally season the sliced steak with salt and pepper. Heat a large skillet over medium heat, add oil, and let it get hot. Add slices of beef, without overcrowding, and cook 30 seconds per side. Remove from pan and repeat with remaining beef (I had to do this in 3 batches).</li>
+                                <li>Leaving the beef juices in the pan, add broccoli. Add 2 tablespoons of the stir-fry sauce (not the one with the arrowroot), mix well, and cover with a lid. Cook for 3-5 minutes until tender. Remove from the pan and set aside (leave behind any juices).</li>
+                                <li>Add remaining sauce as well as the arrowroot sauce to the pan, mixing to combine. Reduce to medium-low and cook until thickened and coats the back of a spoon (nappe consistency), about 2-3 minutes. Add the beef and broccoli back to the pan, leaving behind their juices, and stir to combine and heat through about 1 minute. Be careful not to add the liquid from the beef and broccoli as it will thin the sauce.</li>
+                                <li>Serve with brown or white rice, top with optional toppings, and enjoy!</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        
+		
+	</div>
+
+    <script>
+        let isLiked = false;
+        let likeCount = 34;
+
+        function toggleLike() {
+            const likeButton = document.querySelector('.like-button');
+            const likeCountElement = document.querySelector('.like-count');
+
+            isLiked = !isLiked;
+
+            if (isLiked) {
+                likeButton.classList.add('liked');
+                likeCount++;
+            } else {
+                likeButton.classList.remove('liked');
+                likeCount--;
+            }
+
+            likeCountElement.textContent = likeCount;
+        }
+
+        let isSaved = false;
+        let saveCount = 0;
+
+        function toggleSave() {
+            const saveButton = document.querySelector('.save-button');
+            const saveCountElement = document.querySelector('.save-count');
+
+            isSaved = !isSaved;
+
+            if (isSaved) {
+                saveButton.classList.add('saved');
+                saveCount++;
+            } else {
+                saveButton.classList.remove('saved');
+                saveCount--;
+            }
+
+            saveCountElement.textContent = saveCount;
+        }
+
+
+        
+    </script>
+
+</body>
+</html>
