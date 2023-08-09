@@ -109,20 +109,7 @@
                 border-radius: 9999px;
                 }
             }
-            .posts_container {
-                max-width: 90vw;
-                font-family: sans-serif;
-                margin: 0 auto;
-                margin-left: 7%;
-            }
-            .post img {
-                width: 100%;
-                height: 180px;
-                object-fit: cover;
-            }
-            .Post_container {
-                display: grid;
-            }
+            
         </style>
 
         <aside class="sidebar">
@@ -142,7 +129,7 @@
                 </div>
                 <div style="display: flex;">
                     <img src="static/reward-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-                <a href="#" class="menu-item">Rewards</a>
+                <a href="rewards.html" class="menu-item">Rewards</a>
                 </div>
                 <div style="display: flex;">
                     <img src="static/save-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
@@ -156,7 +143,7 @@
                     <img src="static/most-liked.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;" >    
                 <a href="#" class="menu-item" style="padding-left: 4%;">Most Liked Posts</a>
                 </div>
-                <div style="display: flex;"">
+                <div style="display: flex;">
                     <img src="static/meter.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;">    
                     <a href="#" class="menu-item" style="margin-left: 2%;"> RSF Meter </a>
                 </div>       
@@ -164,15 +151,7 @@
             </nav>
         </aside>
 
-        <script>
-            const menu_toggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            menu_toggle.addEventListener('click', () => {
-                menu_toggle.classList.toggle('is-active');
-                sidebar.classList.toggle('is-active');
-            });
-        </script>
+        
 
         <!-- THIS IS THE SIDEBAR CODE -->
 
@@ -213,16 +192,16 @@
                     <div class="text-muted" style="margin-left: 7px">view all 0 comments</div>
                 </div>
                 <script>
-                    var show = "block"
+                    var show = localStorage.getItem(appearance)
                     document.getElementById("new-post").style.display = show
                 </script>
                 <div class = "post">
-                    <a href="./clickpost.html"></a>
+                    
                     <div class="post-head">
                         <div class="user">
                             <div class="profile-photo" style="width: 60px;">
                                 <a href="#">
-                                    <img src="static/Amy.png" style="height: 60px ;width: 60px;margin-left: 5% ; margin-top: 9%; border-radius: 100%;">
+                                    <img src="static/Amy.png" style="height: 60px ;width: 60px;margin-left: 5% ; margin-top: 9%; border-radius: 100%;" >
                                 </a>
                             </div>
                             <div class="info">
@@ -232,7 +211,9 @@
                         </div>
                     </div>
                     <div class="photo">
-                        <img src="./images/Beef-and-Broccoli-3-728x1092.jpg" alt="postpicture">
+                        <a href="./clickpost.html">
+                            <img src="./images/Beef-and-Broccoli-3-728x1092.jpg" alt="postpicture">
+                        </a>
                     </div>
                     <div class="action-buttons">
                         <div class="interaction-buttons" >
@@ -250,7 +231,6 @@
                     <div class="text-muted" style="margin-left: 7px">view all 5 comments</div>
                 </div>
                 <div class = "post">
-                    <a href="../clickpost.html"></a>
                     <div class="post-head">
                         <div class="user">
                             <div class="profile-photo" style="width: 60px;">
@@ -283,7 +263,6 @@
                     <div class="text-muted" style="margin-left: 7px">view all 10 comments</div>
                 </div>
                 <div class = "post">
-                    <a href="./clickpost.html"></a>
                     <div class="post-head">
                         <div class="user">
                             <div class="profile-photo" style="width: 60px;">
@@ -316,7 +295,6 @@
                     <div class="text-muted" style="margin-left: 7px">view all 8 comments</div>
                 </div>
                 <div class = "post">
-                    <a href="./clickpost.html"></a>
                     <div class="post-head">
                         <div class="user">
                             <div class="profile-photo" style="width: 60px;">
