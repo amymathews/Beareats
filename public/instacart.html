@@ -115,36 +115,49 @@
                     jam
                 </div>
             </div>
-            <div class="product">
-                <div class="product-title">Amount</div>
-                <div class="product-items">
-                    1<br>
-                    2<br>
-                    3<br>
-                    1<br>
-                    2<br>
-                    3<br>
-                    1<br>
-                    2<br>
-                    3<br>
-                    1
-                </div>
-            </div>
+
             <div class="product">
                 <div class="product-title">Price</div>
                 <div class="product-items">
-                    $1<br>
-                    $2<br>
-                    $3<br>
-                    $1<br>
-                    $2<br>
-                    $3<br>
-                    $1<br>
-                    $2<br>
-                    $3<br>
-                    $1
+                    <div class="product-price" id="price1">$1</div>
+                    <div class="product-price" id="price2">$2</div>
+                    <div class="product-price" id="price3">$3</div>
+                    <div class="product-price" id="price4">$4</div>
+                    <div class="product-price" id="price5">$5</div>
+                    <div class="product-price" id="price6">$6</div>
+                    <div class="product-price" id="price7">$7</div>
+                    <div class="product-price" id="price8">$8</div>
+                    <div class="product-price" id="price9">$9</div>
+                    <div class="product-price" id="price10">$10</div>
                 </div>
             </div>
+
+            <div class="product">
+                <div class="product-title">Amount</div>
+                <div class="product-items">
+                    <!-- Change static quantity values to input fields -->
+                    <input type="number" id="amount1" value="1" min="1" oninput="updateTotal(1)">
+                    <br>
+                    <input type="number" id="amount2" value="1" min="1" oninput="updateTotal(2)">
+                    <br>
+                    <input type="number" id="amount3" value="1" min="1" oninput="updateTotal(3)">
+                    <br>
+                    <input type="number" id="amount4" value="1" min="1" oninput="updateTotal(4)">
+                    <br>
+                    <input type="number" id="amount5" value="1" min="1" oninput="updateTotal(5)">
+                    <br>
+                    <input type="number" id="amount6" value="1" min="1" oninput="updateTotal(6)">
+                    <br>
+                    <input type="number" id="amount7" value="1" min="1" oninput="updateTotal(7)">
+                    <br>
+                    <input type="number" id="amount8" value="1" min="1" oninput="updateTotal(8)">
+                    <br>
+                    <input type="number" id="amount9" value="1" min="1" oninput="updateTotal(9)">
+                    <br>
+                    <input type="number" id="amount10" value="1" min="1" oninput="updateTotal(10)">
+                </div>
+            </div>
+
         </div>
         <br>
         <div class="shipping-info">
@@ -152,10 +165,9 @@
             2530 Ridge Rd, 
             Berkeley, CA 94709
         </div>
-        <div class="total-section">
-            Total (tax included): $19.00<br>
-            Shipping fee: $5.00<br>
-            TOTAL: $24.00
+        <div class="total-section" id="totalTaxIncluded">
+            Total (tax included): $55.00<br>
+
         </div>
         <div class="payment-options">
             PAYMENT OPTIONS:<br>
@@ -167,7 +179,8 @@
         <br>
         <div class="button-container">
             <button class="submit-btn" onclick="redirectToOrdered()">PLACE ORDER NOW</button>
-        </div>    </div>
+        </div>    
+    </div>
 
     <script>
         function redirectToOrdered() {
@@ -178,7 +191,50 @@
             // Redirect to the ordered.html page
             window.location.href = "./hub.html";
         }
+
+        // Add this function to update the "Total (tax included)" section
+        function updateTotalTaxIncluded() {
+        const amount1 = parseFloat(document.getElementById('amount1').value);
+        const price1 = parseFloat(document.getElementById('price1').textContent.slice(1));
+        const amount2 = parseFloat(document.getElementById('amount2').value);
+        const price2 = parseFloat(document.getElementById('price2').textContent.slice(1));
+        const amount3 = parseFloat(document.getElementById('amount3').value);
+        const price3 = parseFloat(document.getElementById('price3').textContent.slice(1));
+        const amount4 = parseFloat(document.getElementById('amount4').value);
+        const price4 = parseFloat(document.getElementById('price4').textContent.slice(1));
+        const amount5 = parseFloat(document.getElementById('amount5').value);
+        const price5 = parseFloat(document.getElementById('price5').textContent.slice(1));
+        const amount6 = parseFloat(document.getElementById('amount6').value);
+        const price6 = parseFloat(document.getElementById('price6').textContent.slice(1));
+        const amount7 = parseFloat(document.getElementById('amount7').value);
+        const price7 = parseFloat(document.getElementById('price7').textContent.slice(1));
+        const amount8 = parseFloat(document.getElementById('amount8').value);
+        const price8 = parseFloat(document.getElementById('price8').textContent.slice(1));
+        const amount9 = parseFloat(document.getElementById('amount9').value);
+        const price9 = parseFloat(document.getElementById('price9').textContent.slice(1));
+        const amount10 = parseFloat(document.getElementById('amount10').value);
+        const price10 = parseFloat(document.getElementById('price10').textContent.slice(1));
+        
+        const totalTaxIncluded = (amount1 * price1)+ (amount2 * price2)+ (amount3 * price3)+ (amount4 * price4)+ (amount5 * price5)+ (amount6 * price6)+ (amount7 * price7)+ (amount8 * price8)+ (amount9* price9) + (amount10 * price10);
+        
+        // Update the "Total (tax included)" section
+        const totalTaxIncludedElement = document.getElementById('totalTaxIncluded');
+        totalTaxIncludedElement.textContent = `Total (tax included): $${totalTaxIncluded.toFixed(2)}`;
+    }
+
+    // ... Your existing updateTotal and calculateOverallTotal functions ...
+
+    // Call the updateTotalTaxIncluded function whenever the input value changes
+    function updateTotal(productNumber) {
+        // ... Your existing updateTotal code ...
+        
+        // Call the function to update "Total (tax included)"
+        updateTotalTaxIncluded();
+    }
+
     </script>
+
+    
     
 </body>
 </html>
