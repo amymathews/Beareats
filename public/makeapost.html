@@ -181,8 +181,16 @@
     </div>
 
     <script>
-        // on clicking a post it should appear in the hub
-        localStorage.setItem("appearance", content);
+       function makepost() {
+        var appearance;
+        localStorage.setItem("appearance", "block");
+        window.location.href = "hub.html"; // Replace "hub.html" with your actual hub page URL
+        // const newpost = document.getElementById('new-post');
+        // if (newpost.style.display === 'none') {
+        //     // Show the login form, hide the signUpForm
+        //     newpost.style.display = 'block';
+        // } 
+    }
     </script>
 
     <!-- badges -->
