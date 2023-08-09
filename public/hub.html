@@ -109,20 +109,6 @@
                 border-radius: 9999px;
                 }
             }
-            .posts_container {
-                max-width: 90vw;
-                font-family: sans-serif;
-                margin: 0 auto;
-                margin-left: 7%;
-            }
-            .post img {
-                width: 100%;
-                height: 180px;
-                object-fit: cover;
-            }
-            .Post_container {
-                display: grid;
-            }
         </style>
 
         <aside class="sidebar">
@@ -142,7 +128,7 @@
                 </div>
                 <div style="display: flex;">
                     <img src="static/reward-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-                <a href="#" class="menu-item">Rewards</a>
+                <a href="rewards.html" class="menu-item">Rewards</a>
                 </div>
                 <div style="display: flex;">
                     <img src="static/save-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
@@ -164,25 +150,11 @@
             </nav>
         </aside>
 
-        <script>
-            const menu_toggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            menu_toggle.addEventListener('click', () => {
-                menu_toggle.classList.toggle('is-active');
-                sidebar.classList.toggle('is-active');
-            });
-        </script>
-
         <!-- THIS IS THE SIDEBAR CODE -->
 
         
 		<main class="posts_container">
-			<!-- <h1>Welcome, Human</h1>
-			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, explicabo!</p> -->
-            
             <div class="posts">
-                <!-- <h2 class="posts_title">Hub Posts</h2> -->
                 <div class = "post" id="new-post" style="display: none;">
                     <a href="#"></a>
                     <div class="post-head">
@@ -348,6 +320,8 @@
                     </div>
                     <div class="text-muted" style="margin-left: 7px">view all 7 comments</div>
                 </div>
+                <br>
+                <br>
             </div>
 		</main>
 	</div>
