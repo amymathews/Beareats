@@ -115,11 +115,9 @@
 	color: #707793;
 }
 .profile-photo {
-	width: 60px;
-	aspect-ratio: 1/1;
-	border-radius: 50%;
-	overflow: hidden;
-	margin-left: 10px;
+	width: 100%;
+    height: 100%;
+    border-radius: 9999px;
 }
 .post-head {
 	display: flex;
@@ -186,8 +184,8 @@
     margin: 0 auto;
 }
 .post img {
-    width: 100%;
-    height: 450px;
+    width: 500px;
+    height: 500px;
     object-fit: cover;
 }
 
