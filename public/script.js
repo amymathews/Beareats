@@ -27,6 +27,11 @@ function toggleSignUp() {
     }
 }
 
+function redirectToHub() {
+    window.location.href = "hub.html";
+}
+
+
 //side bar toggle
 
 const menu_toggle = document.querySelector('.menu-toggle');
