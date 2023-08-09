@@ -162,38 +162,59 @@
         <!-- THIS IS THE SIDEBAR CODE -->
 
     </div>
-		</main>
-	</div>
       <!-- Make a Post Section -->
       <div class="content">
         <div class="make-post-container">
-            <h1>Make a Post</h1>
-            <div class="divider-line"></div>
-            <div class="make-post-content">
-                <div class="upload-area">
-                    <p>Drag and drop an image here</p>
-                </div>
-                <textarea class="caption-input" placeholder="Write a caption..."></textarea>
+            <!-- ... (other content) ... -->
+            <div class="upload-area">
+                <p>Drag and drop an image here</p>
             </div>
-            <button class="post-button" onclick="makepost()">Post</button>
+            <textarea class="caption-input" placeholder="Write a caption..."></textarea>
+            <button class="post-button" id="postButton">Post</button>
             <button class="add-ingredients-button">Add Ingredients</button>
         </div>
     </div>
-
+ 
     <script>
-       function makepost() {
-        var appearance;
-        localStorage.setItem("appearance", "block");
-        window.location.href = "hub.html"; // Replace "hub.html" with your actual hub page URL
-        // const newpost = document.getElementById('new-post');
-        // if (newpost.style.display === 'none') {
-        //     // Show the login form, hide the signUpForm
-        //     newpost.style.display = 'block';
-        // } 
-    }
+
+
+    // Code for handling the image upload and post button
+    const uploadArea = document.querySelector('.upload-area');
+    const postButton = document.querySelector('.post-button');
+
+    uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadArea.classList.add('dragover');
+    });
+
+    uploadArea.addEventListener('dragleave', () => {
+        uploadArea.classList.remove('dragover');
+    });
+
+    uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+
+        const file = e.dataTransfer.files[0];
+        if (file.type.startsWith('image/')) {
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(file);
+            img.style.maxWidth = '100%';
+            uploadArea.innerHTML = '';
+            uploadArea.appendChild(img);
+        } else {
+            uploadArea.innerHTML = '<p>Unsupported file type</p>';
+        }
+    });
+
+    postButton.addEventListener('click', () => {
+        const img = uploadArea.querySelector('img');
+        if (img) {
+            // Here you can perform the post action
+            alert('Image posted!');
+        }
+    });
     </script>
 
-    <!-- badges -->
-    
 </body>
 </html>

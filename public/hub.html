@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Responsive Navbar</title>
 	<link rel="stylesheet" href="./hub.css" />
-    
 </head>
 <body>
 	<div class="app">
@@ -189,10 +188,6 @@
                     </div>
                     <div class="text-muted" style="margin-left: 7px">view all 0 comments</div>
                 </div>
-                <script>
-                    var show = localStorage.getItem("appearance");
-                    document.getElementById("new-post").style.display = show;
-                </script>
                 <div class = "post">
                     <div class="post-head">
                         <div class="user">
@@ -345,6 +340,13 @@
         const userNameElement = document.getElementById("welc");
         userNameElement.textContent = userFirstName;
 
+    
+        const show = localStorage.getItem("appearance");
+        
+        if (show === 'block') {
+            document.getElementById("new-post").style.display = 'block';
+        }
 	</script>
 </body>
+
 </html>
