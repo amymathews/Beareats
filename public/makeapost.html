@@ -189,10 +189,15 @@
                 </div>
                 <textarea class="caption-input" placeholder="Write a caption..."></textarea>
             </div>
-            <button class="post-button">Post</button>
+            <button class="post-button" onclick="makepost()">Post</button>
             <button class="add-ingredients-button">Add Ingredients</button>
         </div>
     </div>
+
+    <script>
+        // on clicking a post it should appear in the hub
+        localStorage.setItem("appearance", content);
+    </script>
 
     <!-- badges -->
     
