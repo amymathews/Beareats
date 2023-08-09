@@ -15,9 +15,103 @@
 			</div>
 		</div>
         
-		<aside class="sidebar">
-		
-			<nav class="menu">
+        <!-- THIS IS THE SIDEBAR CODE -->
+        <style>
+
+            .sidebar {
+                flex: 1 1 0;
+                max-width: 245px;
+                min-width: 160px;
+                padding: 2rem 1rem 1rem 1rem;
+                background-color: #003262;
+                border-color: black;
+            }
+
+            .sidebar h3 {
+                color: #707793;
+                font-size: 0.90rem;
+                text-transform: uppercase;
+                margin-bottom: 0.5em;
+            }
+
+            .sidebar .menu {
+                margin: 0 -1rem;
+                position: fixed;
+            }
+
+            .sidebar .menu .menu-item {
+                display: block;
+                padding: 1em;
+                color: #FFF;
+                text-decoration: none;
+                transition: 0.2s linear;
+                margin: 5%;
+                font-size: 2.5vh;
+                font-weight: 100;
+            }
+
+            .sidebar .menu .menu-item:hover {
+                color: #FDB515;
+                border-right: 5px solid #FDB515;
+            }
+
+            .sidebar .menu .menu-item:hover {
+                border-right: 5px solid #FDB515;
+            }
+
+            .content {
+                flex: 1 1 0;
+                padding: 2rem;
+            }
+
+            .content h1 {
+                color: #3C3F58;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .content p {
+                color: #707793;
+            }
+
+            @media (max-width: 600px) {
+                .sidebar {
+                    max-width: 200px;
+                }
+            }
+
+            @media (max-width: 850px) {
+                .menu-toggle {
+                    display: block;
+                }
+                .content {
+                    padding-top: 8rem;
+                }
+                .sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: -300px;
+                    height: 100vh;
+                    width: 100%;
+                    max-width: 200px;
+                    transition: 0.2s linear;
+                }
+                
+                .sidebar.is-active {
+                    left: 0;
+                }
+                
+                .profile-picture {
+                width: 100%;
+                height: 100%;
+                border-radius: 9999px;
+                }
+            }
+        </style>
+
+        <aside class="sidebar">
+
+            <nav class="menu">
                 <div style="display: flex;">
                     <div class="user-info">
                         <span style="color:white; margin-left: 2px;">Welcome, <span id="welc"></span>! </span>
@@ -238,6 +332,20 @@
 			menu_toggle.classList.toggle('is-active');
 			sidebar.classList.toggle('is-active');
 		});
+
+        // Retrieve the user's first name from local storage
+        const userFirstName = localStorage.getItem("username");
+
+        // Display the user's name in the toolbar
+        const userNameElement = document.getElementById("welc");
+        userNameElement.textContent = userFirstName;
+
+    
+        const show = localStorage.getItem("appearance");
+        
+        if (show === 'block') {
+            document.getElementById("new-post").style.display = 'block';
+        }
 	</script>
 </body>
 
