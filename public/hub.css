@@ -62,44 +62,6 @@
   transform: rotate(90deg);
 }
 
-.sidebar {
-	flex: 1 1 0;
-	max-width: 200px;
-    min-width: 160px;
-	padding: 2rem 1rem 1rem 1rem;
-	background-color: #003262;
-}
-
-.sidebar h3 {
-	color: #707793;
-	font-size: 0.90rem;
-	text-transform: uppercase;
-	margin-bottom: 0.5em;
-}
-
-.sidebar .menu {
-	margin: 0 -1rem;
-    position: fixed;
-}
-
-.sidebar .menu .menu-item {
-	display: block;
-	padding: 1em;
-	color: #FFF;
-	text-decoration: none;
-	transition: 0.2s linear;
-}
-
-.sidebar .menu .menu-item:hover,
-.sidebar .menu .menu-item.is-active {
-	color: #3bba9c;
-	border-right: 5px solid #3bba9c;
-}
-
-.sidebar .menu .menu-item:hover {
-	border-right: 5px solid #3bba9c;
-}
-
 .content {
 	flex: 1 1 0;
 	padding: 2rem;

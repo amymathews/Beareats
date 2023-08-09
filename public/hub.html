@@ -51,8 +51,7 @@
                 font-weight: 100;
             }
 
-            .sidebar .menu .menu-item:hover,
-            .sidebar .menu .menu-item.is-active {
+            .sidebar .menu .menu-item:hover {
                 color: #FDB515;
                 border-right: 5px solid #FDB515;
             }
@@ -150,25 +149,11 @@
             </nav>
         </aside>
 
-        <script>
-            const menu_toggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            menu_toggle.addEventListener('click', () => {
-                menu_toggle.classList.toggle('is-active');
-                sidebar.classList.toggle('is-active');
-            });
-        </script>
-
         <!-- THIS IS THE SIDEBAR CODE -->
 
         
 		<main class="posts_container">
-			<!-- <h1>Welcome, Human</h1>
-			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, explicabo!</p> -->
-            
             <div class="posts">
-                <!-- <h2 class="posts_title">Hub Posts</h2> -->
                 <div class = "post" id="new-post" style="display: none;">
                     <a href="#"></a>
                     <div class="post-head">
@@ -203,7 +188,6 @@
                     document.getElementById("new-post").style.display = show
                 </script>
                 <div class = "post">
-                    
                     <div class="post-head">
                         <div class="user">
                             <div class="profile-photo" style="width: 60px;">
