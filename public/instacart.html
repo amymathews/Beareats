@@ -82,6 +82,12 @@
             font-size: 18px;
             line-height: 1.5;
         }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px; /* Adjust this margin as needed */
+        }        
     </style>
 </head>
 <body>
@@ -159,8 +165,9 @@
             <label for="giftCard"><input type="radio" id="giftCard" name="payment" value="Gift Card"> GIFT CARD</label>
         </div>        
         <br>
-        <button class="submit-btn" onclick="redirectToOrdered()">PLACE ORDER NOW</button>
-    </div>
+        <div class="button-container">
+            <button class="submit-btn" onclick="redirectToOrdered()">PLACE ORDER NOW</button>
+        </div>    </div>
 
     <script>
         function redirectToOrdered() {
