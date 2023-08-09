@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instacart Checkout</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #F5F5F5;
+            font-family: Arial, sans-serif;
+        }
+
+        .checkout-container {
+            width: 90%;
+            max-width: 1200px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .shipping-info {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .total-section {
+            background: #0CAC0B;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-align: right;
+        }
+
+        .payment-options {
+            background: #0CAC0B;
+            color: white;
+            padding: 20px 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .payment-options label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .submit-btn {
+            background: #FF7108;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 24px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .product {
+            flex: 1;
+            padding: 20px;
+            background: #FAF0E6;
+            border: 1px solid #DDDDDD;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-items {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="checkout-container">
+        <!-- Header Image -->
+        <img src="./cartlogo.png" alt="Header Image" style="width: 100%; max-height: 150px; object-fit: cover;">
+
+        <div class="product-list">
+            <div class="product">
+                <div class="product-title">Product</div>
+                <div class="product-items">
+                    apple<br>
+                    banana<br>
+                    carrot<br>
+                    deli<br>
+                    egg<br>
+                    fire<br>
+                    grape<br>
+                    ham<br>
+                    ice<br>
+                    jam
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-title">Amount</div>
+                <div class="product-items">
+                    1<br>
+                    2<br>
+                    3<br>
+                    1<br>
+                    2<br>
+                    3<br>
+                    1<br>
+                    2<br>
+                    3<br>
+                    1
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-title">Price</div>
+                <div class="product-items">
+                    $1<br>
+                    $2<br>
+                    $3<br>
+                    $1<br>
+                    $2<br>
+                    $3<br>
+                    $1<br>
+                    $2<br>
+                    $3<br>
+                    $1
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="shipping-info">
+            Shipping to: 
+            2530 Ridge Rd, 
+            Berkeley, CA 94709
+        </div>
+        <div class="total-section">
+            Total (tax included): $19.00<br>
+            Shipping fee: $5.00<br>
+            TOTAL: $24.00
+        </div>
+        <div class="payment-options">
+            PAYMENT OPTIONS:<br>
+            <label for="applePay"><input type="radio" id="applePay" name="payment" value="Apple Pay"> APPLE PAY</label>
+            <label for="googlePay"><input type="radio" id="googlePay" name="payment" value="Google Pay"> GOOGLE PAY</label>
+            <label for="creditCard"><input type="radio" id="creditCard" name="payment" value="Credit Card"> CREDIT CARD</label>
+            <label for="giftCard"><input type="radio" id="giftCard" name="payment" value="Gift Card"> GIFT CARD</label>
+        </div>        
+        <br>
+        <button class="submit-btn" onclick="redirectToOrdered()">PLACE ORDER NOW</button>
+    </div>
+
+    <script>
+        function redirectToOrdered() {
+            // Redirect to the ordered.html page
+            window.location.href = "./ordered.html";
+        }
+    </script>
+    
+</body>
+</html>
