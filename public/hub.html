@@ -116,6 +116,12 @@
 
             <nav class="menu">
                 <div style="display: flex;">
+                    <div class="user-info">
+                        <span style="color:white; margin-left: 2px;">Welcome, <span id="welc"></span>! </span>
+                    </div>
+                </div>
+
+                <div style="display: flex;">
                     <img src="../static/amir.png" style="height: 5vh ;width: 3vw;margin-left: 5% ; margin-top: 9%; border-radius: 100%;">
                 <a href="profile-page.html" class="menu-item">Profile</a>
                 </div>
@@ -150,16 +156,6 @@
                 <div class="scraped-content"> </div>                         
             </nav>
         </aside>
-<!-- 
-        <script>
-            const menu_toggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            menu_toggle.addEventListener('click', () => {
-                menu_toggle.classList.toggle('is-active');
-                sidebar.classList.toggle('is-active');
-            });
-        </script> -->
 
         <!-- THIS IS THE SIDEBAR CODE -->
 
@@ -351,10 +347,10 @@
 		});
 
         // Retrieve the user's first name from local storage
-        const userFirstName = localStorage.getItem("userFirstName");
+        const userFirstName = localStorage.getItem("username");
 
         // Display the user's name in the toolbar
-        const userNameElement = document.getElementById("userName");
+        const userNameElement = document.getElementById("welc");
         userNameElement.textContent = userFirstName;
 
 	</script>
