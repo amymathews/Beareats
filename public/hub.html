@@ -16,38 +16,137 @@
 			</div>
 		</div>
         
-		<aside class="sidebar">
-		
-			<nav class="menu">
+        <!-- THIS IS THE SIDEBAR CODE -->
+        <style>
+
+            .sidebar {
+                flex: 1 1 0;
+                max-width: 245px;
+                min-width: 160px;
+                padding: 2rem 1rem 1rem 1rem;
+                background-color: #003262;
+                border-color: black;
+            }
+
+            .sidebar h3 {
+                color: #707793;
+                font-size: 0.90rem;
+                text-transform: uppercase;
+                margin-bottom: 0.5em;
+            }
+
+            .sidebar .menu {
+                margin: 0 -1rem;
+                position: fixed;
+            }
+
+            .sidebar .menu .menu-item {
+                display: block;
+                padding: 1em;
+                color: #FFF;
+                text-decoration: none;
+                transition: 0.2s linear;
+                margin: 5%;
+                font-size: 2.5vh;
+                font-weight: 100;
+            }
+
+            .sidebar .menu .menu-item:hover,
+            .sidebar .menu .menu-item.is-active {
+                color: #FDB515;
+                border-right: 5px solid #FDB515;
+            }
+
+            .sidebar .menu .menu-item:hover {
+                border-right: 5px solid #FDB515;
+            }
+
+            .content {
+                flex: 1 1 0;
+                padding: 2rem;
+            }
+
+            .content h1 {
+                color: #3C3F58;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .content p {
+                color: #707793;
+            }
+
+            @media (max-width: 600px) {
+                .sidebar {
+                    max-width: 200px;
+                }
+            }
+
+            @media (max-width: 850px) {
+                .menu-toggle {
+                    display: block;
+                }
+                .content {
+                    padding-top: 8rem;
+                }
+                .sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: -300px;
+                    height: 100vh;
+                    width: 100%;
+                    max-width: 200px;
+                    transition: 0.2s linear;
+                }
+                
+                .sidebar.is-active {
+                    left: 0;
+                }
+                
+                .profile-picture {
+                width: 100%;
+                height: 100%;
+                border-radius: 9999px;
+                }
+            }
+            .posts_container {
+                max-width: 90vw;
+                font-family: sans-serif;
+                margin: 0 auto;
+                margin-left: 7%;
+            }
+            .post img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+            .Post_container {
+                display: grid;
+            }
+        </style>
+
+        <aside class="sidebar">
+
+            <nav class="menu">
                 <div style="display: flex;">
-                    <div class="user-info">
-                        <span style="color:white; margin-left: 2px;">Welcome, <span id="userName"></span>! </span>
-                    </div>
+                    <img src="../static/amir.png" style="height: 5vh ;width: 3vw;margin-left: 5% ; margin-top: 9%; border-radius: 100%;">
+                <a href="profile-page.html" class="menu-item">Profile</a>
                 </div>
                 <div style="display: flex;">
-                    <div class="user-info">
-                        <span style="color:white; margin-left: 2px;">Welcome, <span id="userName"></span>! </span>
-                    </div>
-                </div>
-                <div style="display: flex;">
-                    <img src="./static/amir.png" style="height: 5vh ;width: 3vw;margin-left: 5% ; margin-top: 9%; border-radius: 100%;">
-                <a href="#" class="menu-item">Profile</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="./static/home-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 7%;" >
-				    <a href="#" class="menu-item is-active">Home</a>
+                    <img src="../static/home-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 7%;" >
+                    <a href="#" class="menu-item is-active">Home</a>
                 </div>
                 <div style="display: flex;">
                     <img src="static/new-post-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-				<a href="#" class="menu-item">New Post</a>
+                <a href="makeapost.html" class="menu-item">New Post</a>
                 </div>
                 <div style="display: flex;">
                     <img src="static/reward-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-				<a href="#" class="menu-item">Rewards</a>
+                <a href="#" class="menu-item">Rewards</a>
                 </div>
                 <div style="display: flex;">
                     <img src="static/save-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-				<a href="#" class="menu-item">Saved</a>
+                <a href="#" class="menu-item">Saved</a>
                 </div>
                 <div style="display: flex;">
                     <img src="static/settings-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
@@ -57,14 +156,26 @@
                     <img src="static/most-liked.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;" >    
                 <a href="#" class="menu-item" style="padding-left: 4%;">Most Liked Posts</a>
                 </div>
-                <div style="display: flex;">
+                <div style="display: flex;"">
                     <img src="static/meter.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;">    
                     <a href="#" class="menu-item" style="margin-left: 2%;"> RSF Meter </a>
                 </div>       
                 <div class="scraped-content"> </div>                         
-			</nav>
-            
-		</aside>
+            </nav>
+        </aside>
+
+        <script>
+            const menu_toggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            menu_toggle.addEventListener('click', () => {
+                menu_toggle.classList.toggle('is-active');
+                sidebar.classList.toggle('is-active');
+            });
+        </script>
+
+        <!-- THIS IS THE SIDEBAR CODE -->
+
         
 		<main class="posts_container">
 			<!-- <h1>Welcome, Human</h1>
