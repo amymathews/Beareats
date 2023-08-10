@@ -219,11 +219,43 @@
         </div>
         
         <div class="badges">
-            <h2>Your current points</h2>
-            <p id="current-points">0 points</p>
+            <div style= "display:flex; text-align: center; font-size: 3vh; margin-top: 2%; font-weight: bold;">
+                Your current point:
+                
+                <p id="current-points">0 points</p>
+            </div>
             <div class="point-bar">
                 <div class="points"></div>
             </div>
+        </div>
+
+        <div style= "display:flex; text-align: center; justify-content: center; font-size: 3vh; margin-top: 2%; font-weight: bold;">
+            Your Achievements
+        </div>
+        <div class = "rewards-display" style="display: flex; z-index: -1;">
+            <div class = "reward-info" style="margin-left: 0%;">
+                <img src="static/fire-icon.png" class="reward-icon" style="height: 15vh; width: 10vw; margin: 2%; margin-top: 4%; z-index: -1;">
+                <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+            </div>
+            <div class = "reward-info"> 
+                <img src="static/diet-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+            </div>
+            <div class = "reward-info">
+                <img src="static/leaf-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+            </div>
+            <div class = "reward-info">
+                <img src="static/steak-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+            </div>
+            <div class = "reward-info">
+                <img src="static/vegetables-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+            </div>
+
+            
+
         </div>
 
         <div class="roadmap">
@@ -239,9 +271,9 @@
         <div class="roadmap">
             <h2>More Rewards</h2>
             <ul>
-                <li>Amy's kiss (1000 points)</li>
-                <li>Ricky's hug (1000 points)</li>
-                <li>Earn bonus points (10 points)</li>
+                <li>Blue Badge (600 points)</li>
+                <li>Bear Badge (600 points)</li>
+                <li>RSF weight room free pass (1000 points)</li>
                 <!-- Add more reward items as needed -->
             </ul>
         </div>
@@ -250,14 +282,14 @@
             <form id="rewards-form">
                 <div class="reward-item">
                     <label for="reward1">
-                        <input type="radio" id="reward1" name="reward" value="10"> <!-- Assign a value to represent the points needed -->
-                        Reward 1 (10 points)
+                        <input type="radio" id="reward1" name="reward" value="100"> <!-- Assign a value to represent the points needed -->
+                        Free Jamba Juice acai bowl (100 points)
                     </label>
                 </div>
                 <div class="reward-item">
                     <label for="reward2">
-                        <input type="radio" id="reward2" name="reward" value="20"> <!-- Assign a value to represent the points needed -->
-                        Reward 2 (20 points)
+                        <input type="radio" id="reward2" name="reward" value="200"> <!-- Assign a value to represent the points needed -->
+                        Free Mezzo Salad (200 points)
                     </label>
                 </div>
                 <!-- Add more reward items as needed -->
@@ -269,7 +301,7 @@
 
     <div class="popup">
         <span class="popup-close">&times;</span>
-        <p>🎉Congrats! Your reward has been sent to your email!🎉</p>
+        <p id="popup-message">🎉Congrats! Your reward has been sent to your email!🎉</p>
     </div>
 
     <script>
@@ -296,22 +328,75 @@
             // to send the email containing the rewards.
         }
 
-        // Initialize the user's initial points (replace with your actual value)
-let userPoints = 50;
+// Initialize the user's initial points (replace with your actual value)
+let userPoints = 500; // Initial value
+const maxPoints = 1000; // Maximum points value
+
+// Calculate the percentage of user's points relative to the maximum points
+const pointsPercentage = (userPoints / maxPoints) * 100;
+
+// Select the points bar and set its width
 const pointsBar = document.querySelector('.points');
-const currentPointsElement = document.getElementById('current-points');
+pointsBar.style.width = `${pointsPercentage}%`;
 
 // Set the initial value of the current points element
+const currentPointsElement = document.getElementById('current-points');
 currentPointsElement.textContent = `${userPoints} points`;
 
-// ... Your other JavaScript code ...
-
 claimButton.addEventListener('click', () => {
-    // ... Your existing code ...
+    // Simulate sending rewards to email (replace this with actual code to send the email)
+    sendRewardEmail();
 
-    // Update the current points element after claiming a reward
-    currentPointsElement.textContent = `${userPoints} points`;
+    // Deduct points based on the selected reward only when the button is clicked
+    const selectedReward = document.querySelector('input[name="reward"]:checked');
+    if (selectedReward) {
+        const rewardValue = parseInt(selectedReward.value);
+        updatePoints(rewardValue);
+    }
+
+    // Show the pop-up message
+    popup.style.display = 'block';
 });
+
+    // Function to update points based on selected reward value
+    function updatePoints(rewardValue) {
+        if (userPoints >= rewardValue) {
+        userPoints -= rewardValue;} // Deduct the reward value from user's points
+        
+        // Ensure the user's points don't go below 0
+        userPoints = Math.max(userPoints, 0);
+        
+        currentPointsElement.textContent = `${userPoints} points`;
+
+        // Update the width of the point bar based on the user's points value
+        const pointsPercentage = (userPoints / maxPoints) * 100;
+        pointsBar.style.width = `${pointsPercentage}%`;
+    }
+
+    claimButton.addEventListener('click', () => {
+    // Simulate sending rewards to email (replace this with actual code to send the email)
+    sendRewardEmail();
+
+    // Deduct points based on the selected reward only when the button is clicked
+    const selectedReward = document.querySelector('input[name="reward"]:checked');
+    if (selectedReward) {
+        const rewardValue = parseInt(selectedReward.value);
+        
+        if (userPoints >= rewardValue) {
+            // updatePoints(rewardValue);
+            // Show the pop-up message for successful claim
+            popupMessage.textContent = "🎉Congrats! Your reward has been sent to your email!🎉";
+        } else {
+            // Show the pop-up message for insufficient points
+            const popupMessageElement = document.getElementById('popup-message');
+            popupMessageElement.textContent = "I'm sorry, but you need more points to claim the reward.";
+        }
+    }
+
+    // Show the pop-up
+    popup.style.display = 'block';
+});
+
 
     </script>
     

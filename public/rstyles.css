@@ -26,7 +26,7 @@ body {
 
 h1 {
     font-size: 32px;
-    color: #007bff;
+    color: #003262;
     text-align: center;
     font-family: 'Homemade Apple', cursive;
 }
@@ -67,7 +67,7 @@ h1 {
 }
 
 .roadmap h2 {
-    color: #007bff;
+    color: #003262;
 }
 
 .roadmap ul {
@@ -78,7 +78,7 @@ h1 {
 /* Styling for the "Claim Reward" button */
 .claim-button {
     padding: 12px 30px;
-    background-color: #007bff;
+    background-color: #003262;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -89,14 +89,14 @@ h1 {
 }
 
 .claim-button:hover {
-    background-color: #0056b3;
+    background-color: #003262;
 }
 
 /* Styling for the footer */
 
 footer {
     text-align: center;
-    background-color: #007bff;
+    background-color: #003262;
     color: #fff;
     padding: 10px 0;
     font-family: 'Homemade Apple', cursive;
@@ -367,7 +367,7 @@ footer {
 }
 
 .roadmap h2 {
-    color: #007bff;
+    color: #003262;
 }
 
 .roadmap ul {
@@ -378,7 +378,7 @@ footer {
 /* Styling for the "Claim Reward" button */
 .claim-button {
     padding: 12px 30px;
-    background-color: #007bff;
+    background-color: #003262;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -389,5 +389,5 @@ footer {
 }
 
 .claim-button:hover {
-    background-color: #0056b3;
+    background-color: #003262;
 }
