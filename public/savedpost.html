@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Navbar</title>
+	<link rel="stylesheet" href="./hub.css" />
+
+    <!-- SIDEBAR CODE -->
+    
+    <style>
+
+        .savedposts-title {
+            color: dark blue;
+            margin-bottom: 40px;
+            font-size: 24px;
+            position: relative;
+        }
+        .savedposts-title::after {
+            content: “”;
+            position: absolute;
+            height: 2px;
+            width: 100px;
+            background: black;
+            left: 0;
+            bottom: -10px;
+        }
+
+        body {
+            transition: background-color 0.3s ease;
+            background-color: #ffffff; 
+            color: #000000; 
+        }
+
+        body.dark-mode {
+            background-color: #111111; 
+            color: #ffffff; 
+        }
+
+        .dark-mode-active {
+        background-color: #121212; 
+        color: white; 
+        }
+
+        .sidebar {
+            flex: 1 1 0;
+            max-width: 245px;
+            min-width: 160px;
+            padding: 2rem 1rem 1rem 1rem;
+            background-color: #003262;
+            border-color: black;
+        }
+
+        .sidebar h3 {
+            color: #707793;
+            font-size: 0.90rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5em;
+        }
+
+        .sidebar .menu {
+            margin: 0 -1rem;
+            position: fixed;
+        }
+
+        .sidebar .menu .menu-item {
+            display: block;
+            padding: 1em;
+            color: #FFF;
+            text-decoration: none;
+            margin-bottom: 10%;
+            margin-left: 5%;
+            transition: 0.2s linear;
+            font-size: 2.5vh;
+            font-weight: 100;
+        }
+
+        .sidebar-icons {
+            height: 5vh ;
+            width: 3vw;
+            margin-left: 5% ;
+            margin-top: 6%;
+        }
+        
+        .sidebar .menu .menu-item:hover {
+            color: #FDB515;
+            border-right: 5px solid #FDB515;
+        }
+
+        .sidebar .menu .menu-item:hover {
+            border-right: 5px solid #FDB515;
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .menu-toggle {
+                display: block;
+            }
+            .content {
+                padding-top: 8rem;
+            }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -300px;
+                height: 100vh;
+                width: 100%;
+                max-width: 200px;
+                transition: none;
+            }
+            
+            .sidebar.is-active {
+                left: 0;
+                transition: 0.2s linear;
+            }
+
+            .sidebar .menu .menu-item:hover {
+                border-right: 5px solid #FDB515;
+            }
+        
+        }
+        
+            .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            }
+
+            /* Hide default HTML checkbox */
+            .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            }
+
+            /* The slider */
+            .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            input:checked + .slider {
+            background-color: black;
+            }
+
+            input:focus + .slider {
+            box-shadow: 0 0 1px black;
+            }
+
+            input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            }
+
+            /* Rounded sliders */
+            .slider.round {
+            border-radius: 34px;
+            }
+
+            .slider.round:before {
+            border-radius: 50%;
+            }
+    </style>
+    
+    <!-- SIDEBAR CODE -->
+
+    
+
+</head>
+<body>
+	<div class="app">
+		<div class="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+			</div>
+		</div>
+        
+        <!-- SIDEBAR CODE -->
+       
+		<aside class="sidebar">
+      <nav class="menu">
+                <!-- <div style="display: flex;">
+                    <div class="user-info">
+                        <span style="color:white; margin-left: 2px;">Welcome, <span id="welc"></span>! </span>
+                    </div>
+                </div> -->
+                <div style="display: flex;">
+                    <img src="../static/amir.png" class= "sidebar-icons" style="border-radius: 100%;">
+                <a href="profile-page.html" class="menu-item">Profile</a>
+                </div>
+                <div style="display: flex;"">
+                    <img src="../static/home-icon.png" class="sidebar-icons" >
+                    <a href="#" class="menu-item is-active">Home</a>
+                </div>
+                <div style="display: flex;"">
+                    <img src="static/new-post-icon.png" class="sidebar-icons" style="margin-top: 13%;" >
+                <a href="makeapost.html" class="menu-item">New Post</a>
+                </div>
+                <div style="display: flex;"" >
+                    <img src="static/reward-icon.png" class="sidebar-icons reward-icon">
+                    <a href="rewards.html" class="menu-item" style="margin-left: 5%;">Rewards</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/most-liked.png" class="sidebar-icons" >
+                <a href="savedpost.html" class="menu-item">Saved</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/meter.png" class="sidebar-icons" style="margin-top: 13%;">    
+                    <a href="#" class="menu-item"> RSF Meter </a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/instacart.png" class="sidebar-icons">
+                <a href="#" class="menu-item">Instacart</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/settings-icon.png" class="sidebar-icons">
+                <a href="settings-page.html" class="menu-item"> Settings </a>
+                </div>
+                <div class="menu-item dark-mode" style="display: flex;  margin-left: 4%; padding-left: 0; width: 100%; padding-top: 5%; padding-right: 0%; padding-bottom: 5%;">       
+                    <label class="switch" style="margin-right: 5%;">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"> </span>
+                    </label>
+                    <div style="margin-top: 1%; margin-left: 2%; ">
+                    Dark Mode
+                    </div>
+                </div>
+                <div class="scraped-content"> </div>                         
+            </nav>
+        </aside>
+
+        <!-- SIDEBAR CODE -->
+
+        <h2 class = “savedposts-title” style="margin-top:20px; margin-left:20px;"> Saved Posts </h2>
+		<main class="posts_container">
+            <div class="posts">
+                <div class = "post" id="new-post" style="display: none;">
+                    <a href="#"></a>
+                    <div class="post-head">
+                        <div class="user">
+                            <div class="profile-photo" style="width: 60px;">
+                                <a href="#">
+                                    <img src="static/amir.png" style="height: 60px ;width: 60px; margin-left: 5% ; margin-top: 9%; border-radius: 100%; ">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 style="margin-left: 7px; margin-top: 17px;">Amir Shaker</h3>
+                                <small style="margin-left: 7px; margin-top: 17px;">Berkeley, Just now</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="./static/food1.png" alt="postpicture">
+                    </div>
+                    <div class="action-buttons">
+                        <div class="interaction-buttons" >
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-dots"></i></span>
+                        </div>
+                    </div>
+                    <div class="caption">
+                        <p style="margin-left: 7px;"> <b>Amir Shaker</b> Look at my lunch guys!!!</p>
+                    </div>
+                    <div class="text-muted" style="margin-left: 7px">view all 0 comments</div>
+                </div>
+                <div class = "post" style="margin-top:50px;">
+                    <div class="post-head">
+                        <div class="user">
+                            <div class="profile-photo" style="width: 60px;">
+                                <a href="#">
+                                    <img src="static/Amy.png" style="height: 60px ;width: 60px;margin-left: 5% ; margin-top: 9%; border-radius: 100%;" >
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 style="margin-left: 7px; margin-top: 17px;">Amy Mathews</h3>
+                                <small style="margin-left: 7px; margin-top: 17px;">Berkeley, 15 minutes ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <a href="./clickpost.html">
+                            <img src="./images/Beef-and-Broccoli-3-728x1092.jpg" alt="postpicture">
+                        </a>
+                    </div>
+                    <div class="action-buttons">
+                        <div class="interaction-buttons" >
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-dots"></i></span>
+                        </div>
+                    </div>
+                    <div class="liked-by">
+                        <span><img src="static/Ricky.png" style="height: 20px ;width: 20px;margin-left: 5% ; margin-top: 9%; border-radius: 100%;"></span>
+                        <p style="margin-left: 7px;">Liked by Ricky and 33 others</p>
+                    </div>
+                    <div class="caption">
+                        <p style="margin-left: 7px;"> <b>Amy Mathews</b> Look at my lunch guys!!!</p>
+                    </div>
+                    <div class="text-muted" style="margin-left: 7px">view all comments</div>
+                </div>
+                </div>
+		</main>
+	</div>
+    
+	<script>
+		const menu_toggle = document.querySelector('.menu-toggle');
+		const sidebar = document.querySelector('.sidebar');
+
+
+		menu_toggle.addEventListener('click', () => {
+			menu_toggle.classList.toggle('is-active');
+			sidebar.classList.toggle('is-active');
+		});
+
+       // Retrieve the user's first name from local storage
+       const userFirstName = localStorage.getItem("username");
+
+        // Display the user's name in the toolbar
+        const userNameElement = document.getElementById("welc");
+        userNameElement.textContent = userFirstName;
+
+
+	</script>
+
+    <!-- SIDEBAR CODE -->
+
+    <script src="dark-mode.js"></script>
+    
+
+    <!-- SIDEBAR CODE -->
+
+</body>
+
+</html>
