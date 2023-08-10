@@ -48,7 +48,8 @@
                 font-weight: 100;
             }
 
-            .sidebar .menu .menu-item:hover {
+            .sidebar .menu .menu-item:hover,
+            .sidebar .menu .menu-item.is-active {
                 color: #FDB515;
                 border-right: 5px solid #FDB515;
             }
@@ -105,7 +106,58 @@
                 border-radius: 9999px;
                 }
             }
-    
+            .posts_container {
+                max-width: 90vw;
+                font-family: sans-serif;
+                margin: 0 auto;
+                margin-left: 7%;
+            }
+            .post img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+            .Post_container {
+                display: grid;
+            }
+
+            .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #003262; /* Change this to the desired blue color */
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    /* Button to close the pop-up */
+    .popup-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+            /* Style for the point bar */
+    .point-bar {
+        width: 100%;
+        height: 10px;
+        background-color: #ccc; /* Background color of the point bar */
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    /* Style for the filled points in the point bar */
+    .points {
+        height: 100%;
+        width: 50%; /* This value will determine the fill percentage */
+        background-color: #fddb15; /* Color of the filled points */
+        border-radius: 5px;
+    }
         </style>
         
 		<aside class="sidebar">
@@ -161,37 +213,107 @@
     </div>
 
     <div class="profile">
-        <h1>User Profile</h1>
+        <h1>🏆Rewards🏆</h1>
         <div class="profile-info">
             <!-- Profile picture and user info -->
         </div>
         
         <div class="badges">
-            <h2>Badges</h2>
-            <div class="badge-item">
-                <img src="badge1.png" alt="Badge 1">
-                <p>Language Beginner</p>
+            <h2>Your current points</h2>
+            <p id="current-points">0 points</p>
+            <div class="point-bar">
+                <div class="points"></div>
             </div>
-            <div class="badge-item">
-                <img src="badge2.png" alt="Badge 2">
-                <p>Intermediate Linguist</p>
-            </div>
-            <!-- Add more badge items as needed -->
         </div>
+
+        <div class="roadmap">
+            <h2>Missions</h2>
+            <ul>
+                <li>make a new post (10 points)</li>
+                <li>like 10 posts (10 points)</li>
+                <li>wrtie 10 points (10 points)</li>
+                <!-- Add more reward items as needed -->
+            </ul>
+        </div>        
         
         <div class="roadmap">
-            <h2>Rewards</h2>
+            <h2>More Rewards</h2>
             <ul>
-                <li>Unlock new lessons</li>
-                <li>Access advanced topics</li>
-                <li>Earn bonus points</li>
+                <li>Amy's kiss (1000 points)</li>
+                <li>Ricky's hug (1000 points)</li>
+                <li>Earn bonus points (10 points)</li>
                 <!-- Add more reward items as needed -->
             </ul>
         </div>
+        <div class="roadmap">
+            <h2>Available Rewards</h2>
+            <form id="rewards-form">
+                <div class="reward-item">
+                    <label for="reward1">
+                        <input type="radio" id="reward1" name="reward" value="10"> <!-- Assign a value to represent the points needed -->
+                        Reward 1 (10 points)
+                    </label>
+                </div>
+                <div class="reward-item">
+                    <label for="reward2">
+                        <input type="radio" id="reward2" name="reward" value="20"> <!-- Assign a value to represent the points needed -->
+                        Reward 2 (20 points)
+                    </label>
+                </div>
+                <!-- Add more reward items as needed -->
+            </form>
+        </div>
         
-        <button class="claim-button">Claim Reward</button>
+        <button id="claim-button" class="claim-button">Claim Reward</button>
     </div>
+
+    <div class="popup">
+        <span class="popup-close">&times;</span>
+        <p>🎉Congrats! Your reward has been sent to your email!🎉</p>
+    </div>
+
+    <script>
+        const claimButton = document.getElementById('claim-button');
+        const popup = document.querySelector('.popup');
+        const popupCloseButton = document.querySelector('.popup-close');
     
+        claimButton.addEventListener('click', () => {
+            // Simulate sending rewards to email (replace this with actual code to send the email)
+            sendRewardEmail();
+    
+            // Show the pop-up message
+            popup.style.display = 'block';
+        });
+    
+        popupCloseButton.addEventListener('click', () => {
+            // Close the pop-up when the close button is clicked
+            popup.style.display = 'none';
+        });
+    
+        function sendRewardEmail() {
+            // Replace this with your actual code to send the email
+            // You might use an AJAX request or a fetch to communicate with a backend
+            // to send the email containing the rewards.
+        }
+
+        // Initialize the user's initial points (replace with your actual value)
+let userPoints = 50;
+const pointsBar = document.querySelector('.points');
+const currentPointsElement = document.getElementById('current-points');
+
+// Set the initial value of the current points element
+currentPointsElement.textContent = `${userPoints} points`;
+
+// ... Your other JavaScript code ...
+
+claimButton.addEventListener('click', () => {
+    // ... Your existing code ...
+
+    // Update the current points element after claiming a reward
+    currentPointsElement.textContent = `${userPoints} points`;
+});
+
+    </script>
     
 </body>
 </html>
