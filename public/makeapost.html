@@ -8,22 +8,30 @@
 	<link rel="stylesheet" href="mstyles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 
-</head>
-<body>
-	<div class="app">
-		<div class="menu-toggle">
-			<div class="hamburger">
-				<span></span>
-			</div>
-		</div>
-        
-        <!-- THIS IS THE SIDEBAR CODE -->
-        <style>
+    <!-- SIDEBAR CODE -->
+    
+    <style>
+
+        body {
+            transition: background-color 0.3s ease;
+            background-color: #ffffff; 
+            color: #000000; 
+        }
+
+        body.dark-mode {
+            background-color: #111111; 
+            color: #ffffff; 
+        }
+
+        .dark-mode-active {
+        background-color: #121212; 
+        color: white; 
+        }
 
         .sidebar {
             flex: 1 1 0;
             max-width: 245px;
-            min-width: 245px;
+            min-width: 160px;
             padding: 2rem 1rem 1rem 1rem;
             background-color: #003262;
             border-color: black;
@@ -170,80 +178,74 @@
 
 </head>
 <body>
-	<div class="app">
+    <div class="app">
 		<div class="menu-toggle">
 			<div class="hamburger">
 				<span></span>
 			</div>
 		</div>
         
-     <!-- SIDEBAR CODE -->
+        <!-- SIDEBAR CODE -->
+       
+		<aside class="sidebar">
+      <nav class="menu">
 
-
-    <aside class="sidebar">
-
-        <nav class="menu">
-            <div style="display: flex;">
-                <img src="../static/amir.png" class= "sidebar-icons" style="border-radius: 100%;">
-            <a href="profile-page.html" class="menu-item">Profile</a>
-            </div>
-            <div style="display: flex;"">
-                <img src="../static/home-icon.png" class="sidebar-icons" >
-                <a href="hub.html" class="menu-item is-active">Home</a>
-            </div>
-            <div style="display: flex;"">
-                <img src="static/new-post-icon.png" class="sidebar-icons" style="margin-top: 13%;" >
-            <a href="makeapost.html" class="menu-item">New Post</a>
-            </div>
-            <div style="display: flex;"" >
-                <img src="static/reward-icon.png" class="sidebar-icons reward-icon">
-                <a href="rewards.html" class="menu-item" style="margin-left: 5%;">Rewards</a>
-            </div>
-            <div style="display: flex;">
-                <img src="static/most-liked.png" class="sidebar-icons" >
-            <a href="#" class="menu-item">Saved</a>
-            </div>
-            <div style="display: flex;">
-                <img src="static/meter.png" class="sidebar-icons" style="margin-top: 13%;">    
-                <a href="#" class="menu-item"> RSF Meter </a>
-            </div>
-            <div style="display: flex;">
-                <img src="static/instacart.png" class="sidebar-icons">
-            <a href="#" class="menu-item">Instacart</a>
-            </div>
-            <div style="display: flex;">
-                <img src="static/settings-icon.png" class="sidebar-icons">
-            <a href="settings-page.html" class="menu-item"> Settings </a>
-            </div>
-            <div class="menu-item" style="display: flex;  margin-left: 4%; padding-left: 0; width: 100%; padding-top: 5%; padding-right: 0%; padding-bottom: 5%;">       
-                <label class="switch" style="margin-right: 5%;">
-                    <input type="checkbox" id="darkModeToggle">
-                    <span class="slider round"> </span>
-                </label>
-                <div style="margin-top: 1%; margin-left: 2%; ">
-                Dark Mode
+                <div style="display: flex;">
+                    <p style= "font-family: 'Homemade Apple', cursive; color: white; font-size: large; margin-left: 55px ;"> Beareats</p>
                 </div>
-            </div>
-            <div class="scraped-content"> </div>                         
-        </nav>
-    </aside>
+<!-- 
+                <div style="display: flex;">
+                    <div class="user-info">
+                        <span style="color:white; margin-left: 20px;">Welcome, <span id="welc"></span>! </span>
+                    </div>
+                </div> -->
+                <div style="display: flex;">
+                    <img src="../static/amir.png" class= "sidebar-icons" style="border-radius: 100%;">
+                <a href="profile-page.html" class="menu-item">Profile</a>
+                </div>
+                <div style="display: flex;"">
+                    <img src="../static/home-icon.png" class="sidebar-icons" >
+                    <a href="#" class="menu-item is-active">Home</a>
+                </div>
+                <div style="display: flex;"">
+                    <img src="static/new-post-icon.png" class="sidebar-icons" style="margin-top: 13%;" >
+                <a href="makeapost.html" class="menu-item">New Post</a>
+                </div>
+                <div style="display: flex;"" >
+                    <img src="static/reward-icon.png" class="sidebar-icons reward-icon">
+                    <a href="rewards.html" class="menu-item" style="margin-left: 5%;">Rewards</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/most-liked.png" class="sidebar-icons" >
+                <a href="savedpost.html" class="menu-item">Saved</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/meter.png" class="sidebar-icons" style="margin-top: 13%;">    
+                    <a href="https://safe.density.io/#/displays/dsp_956223069054042646?token=shr_o69HxjQ0BYrY2FPD9HxdirhJYcFDCeRolEd744Uj88e&share&qr" class="menu-item"> RSF Meter </a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/instacart.png" class="sidebar-icons">
+                <a href="instacartempty.html" class="menu-item">Instacart</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/settings-icon.png" class="sidebar-icons">
+                <a href="settings-page.html" class="menu-item"> Settings </a>
+                </div>
+                <div class="menu-item dark-mode" style="display: flex;  margin-left: 4%; padding-left: 0; width: 100%; padding-top: 5%; padding-right: 0%; padding-bottom: 5%;">       
+                    <label class="switch" style="margin-right: 5%;">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"> </span>
+                    </label>
+                    <div style="margin-top: 1%; margin-left: 2%; ">
+                    Dark Mode
+                    </div>
+                </div>
+                <div class="scraped-content"> </div>                         
+            </nav>
+        </aside>
 
         <!-- SIDEBAR CODE -->
 
-    </div>
-      <!-- Make a Post Section
-      <div class="content">
-        <div class="make-post-container">
-            <div class="upload-area">
-                <p>Drag and drop an image here</p>
-            </div>
-            <textarea class="caption-input" placeholder="Write a caption..."></textarea>
-            <br>
-            <button class="post-button" id="postButton">Post</button>
-            <button class="add-ingredients-button">Add Ingredients</button>
-            <button class="add-nutrition-button">Add Nutrition</button>
-        </div>
-    </div> -->
     
     <div class="content">
         <div class="make-post-container">
@@ -264,6 +266,8 @@
             </div>
         </div>
     </div>
+
+</div>
     
  
     <script>

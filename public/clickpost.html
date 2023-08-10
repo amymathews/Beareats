@@ -10,16 +10,17 @@
         .main-content {
             flex: 3;  /* Adjust this value if you want to change the width */
             padding: 2rem;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
         }
 
         .title-div {
-            background-color: #555;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
             text-align: center;
-            color: #fff;
+            color: #000000;
+
         }
 
         .image-info-container {
@@ -31,42 +32,48 @@
             flex: 1;
             border-radius: 10px;
             margin-right: 20px;
-            background-color: #003262;
+            background-color: #ffffff;
         }
 
         .info-div {
             flex: 2;
-            background-color: #777;
+            background-color: #dadada;
             border-radius: 10px;
             padding: 20px;
         }
 
-        .small-div-1,
+        .small-div-1{
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        
         .small-div-2,
         .small-div-3 {
-            background-color: #f9ffcb;
+            background-color: #ffffff;
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
         }
 
         .small-div-2 {
-            background-color: #FFFDD0;
+            background-color: #ffffff;
         }
 
         .small-div-3 {
-            background-color: #FFFDD0;
+            background-color: #ffffff;
         }
 
         .inner-small-div {
-            background-color: #aaa;  /* different color for inner div */
+            background-color: #ffffff;  /* different color for inner div */
             border-radius: 10px;
             padding: 10px;
             margin-top: 10px;
         }
 
         .list-container {
-            background-color: #fefefe;  /* different color for list container */
+            background-color: #ffffff;  /* different color for list container */
             border-radius: 10px;
             padding: 10px;
             margin-top: 10px;
@@ -78,9 +85,14 @@
             margin: 0; /* Reset default margin */
         }
 
+        .list-container li {
+            padding: 5px;  /* Adjust this value as needed */
+            margin: 0; /* Reset default margin */
+        }
+
         
         .steps-list-container {
-            background-color: #fefefe;  /* different color for list container */
+            background-color: #ffffff;  /* different color for list container */
             border-radius: 10px;
             padding: 10px;
             margin-top: 10px;
@@ -91,9 +103,15 @@
             margin: 0; /* Reset default margin */
         }
 
+        .steps-list-container li {
+            padding: 5px;  /* Adjust this value as needed */
+            margin: 0; /* Reset default margin */
+        }
+
+
         .actual-image {
             flex: 4;
-            background-color: rgb(34, 189, 34);
+            background-color: #dadada;
             border-radius: 10px;
             padding: 20px;
             display: flex;
@@ -108,7 +126,7 @@
 
         .comments {
             flex: 4;
-            background-color: rgb(34, 163, 189);
+            background-color: rgb(255, 255, 255);
             border-radius: 10px;
             padding: 20px;
             display: flex;
@@ -117,14 +135,20 @@
             margin-top: 20px;
         }
 
+
         .image-title {
             flex: 1;
-            background-color: #767;
+            background-color: rgb(255, 255, 255);
             border-radius: 10px;
             padding: 10px;
             margin-top: 0px;
             text-align: center;
+            display: flex; /* added this property to set up flexbox */
+            justify-content: space-evenly; /* added this to align children to the left */
+            gap: 1px; /* space between the two button divs */
         }
+
+        
 
         .like-button {
             display: flex;
@@ -174,8 +198,111 @@
         }
 
         .saved .save-icon {
-            color: green;
+            color: rgb(0, 164, 179);
         }
+
+        .like-button, .save-button {
+            margin: 0 10px; /* Add margin for space between buttons */
+        }
+
+        .comment-symbol {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+
+        
+        textarea#comment-input {
+            width: 100%;
+            padding: 10px;
+            margin: 1px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+
+        button {
+            padding: 5px 10px;
+            background-color: #03ae00;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        button:hover{
+            background-color:#015d12;
+        }
+
+        button:active{
+            background-color:#005803;
+            opacity: 0.8;
+            border: 1px solid;
+            border-top-width: 2px;
+            border-color: #002a0d;
+        }
+
+        
+        .comment {
+            background-color: #FFFDD0; 
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            word-wrap: break-word; 
+        }
+        
+
+        .comments, #comments-section, #comments-list {
+            width: 100%;
+            display: block;
+            clear: both; /* This can help in case there are float properties affecting layout */
+        }
+
+        .comment {
+            background-color: #ffffff;  /* cream color */
+            border: 2px solid #b4b4b4;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            word-wrap: break-word; /* Ensures the comment text wraps if it's too long */
+        }
+
+        /* Add spacing between textarea and the post button */
+        #comment-input {
+            margin-right: 10px;
+        }
+
+
+
+        .btn {
+            display: inline-block;
+            background-color: #03ae00;  /* green background color */
+            color: white;               /* white text color */
+            padding: 10px 20px;        /* padding around the text */
+            border: none;              /* no border */
+            border-radius: 5px;        /* rounded corners */
+            text-align: center;        /* center the text inside */
+            text-decoration: none;     /* remove underline from the anchor */
+            font-size: 16px;           /* font size */
+            cursor: pointer;           /* change cursor to pointer when hovered over */
+        }
+
+        .btn:hover {
+            background-color: #45a049; /* slightly darker green when hovered over */
+        }
+
+        .btn:active{
+            background-color:#45a049;
+            opacity: 0.8;
+            border: 2px solid;
+            border-top-width: 5px;
+            border-color: #00601d;
+        }
+
+
+
 
 
     </style>
@@ -328,8 +455,9 @@
         <!-- THIS IS THE SIDEBAR CODE -->
 
         <div class="main-content">
-            <div class="title-div">Beef and Broccoli Stir Fry
-                <div>by </div>
+            <div class="title-div">
+                <div style="font-size: 30px;"><b><i>Beef and Broccoli Stir Fry</i></b></div>
+                <div>by Amy Mathews</div>
             </div>
             
             <div class="image-info-container">
@@ -345,22 +473,32 @@
                         </div>
 
                         <div class="save-button" onclick="toggleSave()">
-                            <span class="save-icon">&#128190;</span>
-                            <span class="save-count">0</span>
+                            <span class="save-icon">&#9734;</span>
+                            <span class="save-count">8</span>
                         </div>
+                        <div class="comment-symbol">
+                            <span class="save-icon">&#128172;</span>
+                            <span id="comment-counter">0</span> 
+                        </div>
+
                     </div>
                     <div class="comments">
-                        comments here
+                        <textarea id="comment-input" placeholder="Add a comment..."></textarea>
+                        <button onclick="postComment()">Post</button>
+                        <div id="comments-section">
+                            <div id="comments-list"></div>
+                        </div>
                     </div>
 
                 </div>
                 <div class="info-div">
                     <!-- info goes here -->
                     <div class="small-div-1">
-                        <div>Calories: 217</div>
-                        <div>Macros: Protein: 18g Carbs: 13g Fat: 10g</div>
+                        <div><b>Calories: </b>217</div>
+                        <br>
+                        <div><b>Macros: </b>Protein: 18g, Carbs: 13g, Fat: 10g</div>
                     </div>
-                    <div class="small-div-2">Ingredients
+                    <div class="small-div-2"><b>Ingredients</b>
                         <div class="list-container">
                             <ul>
                                 <li>1/2 tablespoon avocado oil</li>
@@ -378,9 +516,9 @@
                                 <li>optional toppings: sesame seeds, green onions</li>
                             </ul>
                         </div>
-                        <div class="inner-small-div">Instacart link</div>
+                        <div class="inner-small-div"><a href="instacart.html" class="btn">&#129365; Order from Instacart! &#129365;</a></div>
                     </div>
-                    <div class="small-div-3">Instructions
+                    <div class="small-div-3"><b>Instructions</b>
                         <div class="steps-list-container">
                             <ol>
                                 <li>In a small bowl or jar, make the sauce by combining the coconut aminos, broth, lime juice, sesame oil, garlic, ginger, red pepper flakes, and pepper. Add two tablespoons of the sauce in another small bowl along with the arrowroot flour and mix well. Set both of them aside.</li>
@@ -424,7 +562,7 @@
         }
 
         let isSaved = false;
-        let saveCount = 0;
+        let saveCount = 8;
 
         function toggleSave() {
             const saveButton = document.querySelector('.save-button');
@@ -442,6 +580,32 @@
 
             saveCountElement.textContent = saveCount;
         }
+
+
+        function postComment() {
+            // Get the value from the textarea
+            const commentValue = document.getElementById("comment-input").value;
+
+            // If the comment is not empty, add it to the comments list
+            if (commentValue.trim() !== '') {
+                // Create a new div for the comment
+                const newComment = document.createElement("div");
+                newComment.innerText = commentValue;
+                newComment.classList.add("comment");
+
+                // Add the new comment to the comments list
+                const commentsList = document.getElementById("comments-list");
+                commentsList.appendChild(newComment);
+
+                // Clear the textarea
+                document.getElementById("comment-input").value = '';
+
+                // Increase the comment counter
+                const commentCounter = document.getElementById("comment-counter");
+                commentCounter.innerText = parseInt(commentCounter.innerText) + 1;
+            }
+        }
+
 
 
         
