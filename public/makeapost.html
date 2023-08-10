@@ -6,6 +6,170 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Responsive Navbar</title>
 	<link rel="stylesheet" href="mstyles.css" />
+
+    <!-- SIDEBAR CODE -->
+    
+    <style>
+
+        body {
+            transition: background-color 0.3s ease;
+            background-color: #ffffff; /* Light mode background color */
+            color: #000000; /* Light mode text color */
+        }
+
+        body.dark-mode {
+            background-color: #111111; /* Dark mode background color */
+            color: #ffffff; /* Dark mode text color */
+        }
+
+        .sidebar {
+            flex: 1 1 0;
+            max-width: 245px;
+            min-width: 245px;
+            padding: 2rem 1rem 1rem 1rem;
+            background-color: #003262;
+            border-color: black;
+        }
+
+        .sidebar h3 {
+            color: #707793;
+            font-size: 0.90rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5em;
+        }
+
+        .sidebar .menu {
+            margin: 0 -1rem;
+            position: fixed;
+        }
+
+        .sidebar .menu .menu-item {
+            display: block;
+            padding: 1em;
+            color: #FFF;
+            text-decoration: none;
+            margin-bottom: 10%;
+            margin-left: 5%;
+            transition: 0.2s linear;
+            font-size: 2.5vh;
+            font-weight: 100;
+        }
+
+        .sidebar-icons {
+            height: 5vh ;
+            width: 3vw;
+            margin-left: 5% ;
+            margin-top: 6%;
+        }
+        
+        .sidebar .menu .menu-item:hover {
+            color: #FDB515;
+            border-right: 5px solid #FDB515;
+        }
+
+        .sidebar .menu .menu-item:hover {
+            border-right: 5px solid #FDB515;
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .menu-toggle {
+                display: block;
+            }
+            .content {
+                padding-top: 8rem;
+            }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -300px;
+                height: 100vh;
+                width: 100%;
+                max-width: 200px;
+                transition: none;
+            }
+            
+            .sidebar.is-active {
+                left: 0;
+                transition: 0.2s linear;
+            }
+
+            .sidebar .menu .menu-item:hover {
+                border-right: 5px solid #FDB515;
+            }
+        
+        }
+        
+            .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            }
+
+            /* Hide default HTML checkbox */
+            .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            }
+
+            /* The slider */
+            .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            input:checked + .slider {
+            background-color: black;
+            }
+
+            input:focus + .slider {
+            box-shadow: 0 0 1px black;
+            }
+
+            input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            }
+
+            /* Rounded sliders */
+            .slider.round {
+            border-radius: 34px;
+            }
+
+            .slider.round:before {
+            border-radius: 50%;
+            }
+    </style>
+    
+    <!-- SIDEBAR CODE -->
+
 </head>
 <body>
 	<div class="app">
@@ -15,151 +179,58 @@
 			</div>
 		</div>
         
-        <!-- THIS IS THE SIDEBAR CODE -->
-        <style>
+     <!-- SIDEBAR CODE -->
 
-            .sidebar {
-                flex: 1 1 0;
-                max-width: 245px;
-                min-width: 245px;
-                padding: 2rem 1rem 1rem 1rem;
-                background-color: #003262;
-                border-color: black;
-            }
 
-            .sidebar h3 {
-                color: #707793;
-                font-size: 0.90rem;
-                text-transform: uppercase;
-                margin-bottom: 0.5em;
-            }
+    <aside class="sidebar">
 
-            .sidebar .menu {
-                margin: 0 -1rem;
-                position: fixed;
-            }
-
-            .sidebar .menu .menu-item {
-                display: block;
-                padding: 1em;
-                color: #FFF;
-                text-decoration: none;
-                transition: 0.2s linear;
-                margin: 5%;
-                font-size: 2.5vh;
-                font-weight: 100;
-            }
-
-            .sidebar .menu .menu-item:hover {
-                color: #FDB515;
-                border-right: 5px solid #FDB515;
-            }
-
-            .sidebar .menu .menu-item:hover {
-                border-right: 5px solid #FDB515;
-            }
-
-            .content {
-                flex: 1 1 0;
-                padding: 2rem;
-            }
-
-            .content h1 {
-                color: #3C3F58;
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .content p {
-                color: #707793;
-            }
-
-            @media (max-width: 600px) {
-                .sidebar {
-                    max-width: 200px;
-                }
-            }
-
-            @media (max-width: 850px) {
-                .menu-toggle {
-                    display: block;
-                }
-                .content {
-                    padding-top: 8rem;
-                }
-                .sidebar {
-                    position: fixed;
-                    top: 0;
-                    left: -300px;
-                    height: 100vh;
-                    width: 100%;
-                    max-width: 200px;
-                    transition: 0.2s linear;
-                }
-                
-                .sidebar.is-active {
-                    left: 0;
-                }
-                
-                .profile-picture {
-                width: 100%;
-                height: 100%;
-                border-radius: 9999px;
-                }
-            }
-    
-        </style>
-        
-		<aside class="sidebar">
-		
-			<nav class="menu">
-                <div style="display: flex;">
-                    <img src="../static/amir.png" style="height: 5vh ;width: 3vw;margin-left: 5% ; margin-top: 9%; border-radius: 100%;">
-                <a href="profile-page.html" class="menu-item">Profile</a>
+        <nav class="menu">
+            <div style="display: flex;">
+                <img src="../static/amir.png" class= "sidebar-icons" style="border-radius: 100%;">
+            <a href="profile-page.html" class="menu-item">Profile</a>
+            </div>
+            <div style="display: flex;"">
+                <img src="../static/home-icon.png" class="sidebar-icons" >
+                <a href="hub.html" class="menu-item is-active">Home</a>
+            </div>
+            <div style="display: flex;"">
+                <img src="static/new-post-icon.png" class="sidebar-icons" style="margin-top: 13%;" >
+            <a href="makeapost.html" class="menu-item">New Post</a>
+            </div>
+            <div style="display: flex;"" >
+                <img src="static/reward-icon.png" class="sidebar-icons reward-icon">
+                <a href="rewards.html" class="menu-item" style="margin-left: 5%;">Rewards</a>
+            </div>
+            <div style="display: flex;">
+                <img src="static/most-liked.png" class="sidebar-icons" >
+            <a href="#" class="menu-item">Saved</a>
+            </div>
+            <div style="display: flex;">
+                <img src="static/meter.png" class="sidebar-icons" style="margin-top: 13%;">    
+                <a href="#" class="menu-item"> RSF Meter </a>
+            </div>
+            <div style="display: flex;">
+                <img src="static/instacart.png" class="sidebar-icons">
+            <a href="#" class="menu-item">Instacart</a>
+            </div>
+            <div style="display: flex;">
+                <img src="static/settings-icon.png" class="sidebar-icons">
+            <a href="settings-page.html" class="menu-item"> Settings </a>
+            </div>
+            <div class="menu-item" style="display: flex;  margin-left: 4%; padding-left: 0; width: 100%; padding-top: 5%; padding-right: 0%; padding-bottom: 5%;">       
+                <label class="switch" style="margin-right: 5%;">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider round"> </span>
+                </label>
+                <div style="margin-top: 1%; margin-left: 2%; ">
+                Dark Mode
                 </div>
-                <div style="display: flex;">
-                    <img src="../static/home-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 7%;" >
-				    <a href="hub.html" class="menu-item is-active">Home</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="static/new-post-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-				<a href="makeapost.html" class="menu-item">New Post</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="static/reward-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-				<a href="rewards.html" class="menu-item">Rewards</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="static/save-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-				<a href="#" class="menu-item">Saved</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="static/settings-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-                <a href="#" class="menu-item">Settings</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="static/most-liked.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;" >    
-                <a href="#" class="menu-item" style="padding-left: 4%;">Most Liked Posts</a>
-                </div>
-                <div style="display: flex;"">
-                    <img src="static/meter.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;">    
-                    <a href="#" class="menu-item" style="margin-left: 2%;"> RSF Meter </a>
-                </div>       
-                <div class="scraped-content"> </div>                         
-			</nav>
-		</aside>
+            </div>
+            <div class="scraped-content"> </div>                         
+        </nav>
+    </aside>
 
-        <script>
-            const menu_toggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-    
-            menu_toggle.addEventListener('click', () => {
-                menu_toggle.classList.toggle('is-active');
-                sidebar.classList.toggle('is-active');
-            });
-        </script>
-
-        <!-- THIS IS THE SIDEBAR CODE -->
+        <!-- SIDEBAR CODE -->
 
     </div>
       <!-- Make a Post Section -->
@@ -215,6 +286,25 @@
             alert('Image posted!');
         }
     });
+    </script>
+
+
+    <!-- badges -->
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const bodyElement = document.body;
+        const buttonElement = document.querySelector('#darkModeToggle')
+        const menuItems = document.querySelectorAll('.menu-item')
+
+        darkModeToggle.addEventListener('click', () => {
+            bodyElement.classList.toggle('dark-mode');
+            buttonElement.classList.toggle('dark-mode');
+            menuItems.forEach(item => {
+                item.classList.toggle('dark-mode');
+            });
+        });
+
     </script>
 
 </body>

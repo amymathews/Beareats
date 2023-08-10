@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Settings Page</title>
+	<link rel="stylesheet" href="./hub.css" />
+    <style>
+
+        body {
+            transition: background-color 0.3s ease;
+            background-color: #ffffff; /* Light mode background color */
+            color: #000000; /* Light mode text color */
+        }
+
+        body.dark-mode {
+            background-color: #111111; /* Dark mode background color */
+            color: #ffffff; /* Dark mode text color */
+        }
+        
+        #darkModeToggle {
+            position: fixed; 
+            left: 50%; 
+            top:45%; 
+            height: 10vh; 
+            width: 20vw;
+            background-color: #000000;
+            color: white;
+        }
+
+        #darkModeToggle.dark-mode {
+            position: fixed; 
+            left: 50%; 
+            top:45%; 
+            height: 10vh; 
+            width: 20vw;
+            background-color: gray;
+            color: black;
+        }
+
+        .sidebar {
+            flex: 1 1 0;
+            max-width: 245px;
+            min-width: 160px;
+            padding: 2rem 1rem 1rem 1rem;
+            background-color: #003262;
+            border-color: black;
+        }
+
+        .sidebar h3 {
+            color: #707793;
+            font-size: 0.90rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5em;
+        }
+
+        .sidebar .menu {
+            margin: 0 -1rem;
+            position: fixed;
+        }
+
+        .sidebar .menu .menu-item {
+            display: block;
+            padding: 1em;
+            color: #FFF;
+            text-decoration: none;
+            margin-bottom: 10%;
+            margin-left: 5%;
+            transition: 0.2s linear;
+            font-size: 2.5vh;
+            font-weight: 100;
+        }
+
+        .menu-item.dark-mode{
+            color: gray;
+        }
+
+        .sidebar-icons {
+            height: 5vh ;
+            width: 3vw;
+            margin-left: 5% ;
+            margin-top: 6%;
+        }
+        
+        .sidebar .menu .menu-item:hover {
+            color: #FDB515;
+            border-right: 5px solid #FDB515;
+        }
+
+        .sidebar .menu .menu-item:hover {
+            border-right: 5px solid #FDB515;
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .menu-toggle {
+                display: block;
+            }
+            .content {
+                padding-top: 8rem;
+            }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -300px;
+                height: 100vh;
+                width: 100%;
+                max-width: 200px;
+                transition: none;
+            }
+            
+            .sidebar.is-active {
+                left: 0;
+                transition: 0.2s linear;
+            }
+
+            .sidebar .menu .menu-item:hover {
+                border-right: 5px solid #FDB515;
+            }
+        
+        }
+
+    </style>
+</head>
+<body>
+	<div class="app">
+
+        <aside class="sidebar">
+
+            <nav class="menu">
+                <div style="display: flex; justify-content: flex-start;">
+                    <img src="../static/amir.png" class= "sidebar-icons" style="border-radius: 100%;">
+                <a href="profile-page.html" class="menu-item">Profile</a>
+                </div>
+                <div style="display: flex; justify-content: flex-start;"">
+                    <img src="../static/home-icon.png" class="sidebar-icons" >
+                    <a href="#" class="menu-item is-active">Home</a>
+                </div>
+                <div style="display: flex; justify-content: flex-start;"">
+                    <img src="static/new-post-icon.png" class="sidebar-icons" style="margin-top: 13%;" >
+                <a href="makeapost.html" class="menu-item">New Post</a>
+                </div>
+                <div style="display: flex; justify-content: flex-start;"" >
+                    <img src="static/reward-icon.png" class="sidebar-icons reward-icon">
+                    <a href="rewards.html" class="menu-item" style="margin-left: 5%;">Rewards</a>
+                </div>
+                <div style="display: flex; justify-content: flex-start;">
+                    <img src="static/most-liked.png" class="sidebar-icons" >
+                <a href="#" class="menu-item">Saved</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/meter.png" class="sidebar-icons" style="margin-top: 13%;">    
+                    <a href="#" class="menu-item"> RSF Meter </a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/instacart.png" class="sidebar-icons">
+                <a href="#" class="menu-item">Instacart</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/settings-icon.png" class="sidebar-icons">
+                <a href="#" class="menu-item"> Settings </a>
+                </div>       
+                <div class="scraped-content"> </div>                         
+            </nav>
+            <script>
+                const menu_toggle = document.querySelector('.menu-toggle');
+                const sidebar = document.querySelector('.sidebar');
+        
+                menu_toggle.addEventListener('click', () => {
+                    menu_toggle.classList.toggle('is-active');
+                    sidebar.classList.toggle('is-active');
+                });
+        
+                // Retrieve the user's first name from local storage
+                const userFirstName = localStorage.getItem("userFirstName");
+        
+                // Display the user's name in the toolbar
+                const userNameElement = document.getElementById("userName");
+                userNameElement.textContent = userFirstName;
+        
+            </script>
+        </aside>
+
+        <button id="darkModeToggle"> Dark Mode </button>
+        
+        <script>
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const bodyElement = document.body;
+            const buttonElement = document.querySelector('#darkModeToggle')
+            const menuItems = document.querySelectorAll('.menu-item')
+
+            darkModeToggle.addEventListener('click', () => {
+                bodyElement.classList.toggle('dark-mode');
+                buttonElement.classList.toggle('dark-mode');
+                menuItems.forEach(item => {
+                    item.classList.toggle('dark-mode');
+                });
+            });
+
+        </script>
+        
+
+</body>
+</html>
