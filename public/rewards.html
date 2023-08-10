@@ -4,6 +4,170 @@
     <title>User Profile - Reward System</title>
     <link rel="stylesheet" type="text/css" href="rstyles.css">
     <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+
+<!-- SIDEBAR CODE -->
+    
+<style>
+
+    body {
+        transition: background-color 0.3s ease;
+        background-color: #ffffff; /* Light mode background color */
+        color: #000000; /* Light mode text color */
+    }
+
+    body.dark-mode {
+        background-color: #111111; /* Dark mode background color */
+        color: #ffffff; /* Dark mode text color */
+    }
+
+    .sidebar {
+        flex: 1 1 0;
+        max-width: 245px;
+        min-width: 245px;
+        padding: 2rem 1rem 1rem 1rem;
+        background-color: #003262;
+        border-color: black;
+    }
+
+    .sidebar h3 {
+        color: #707793;
+        font-size: 0.90rem;
+        text-transform: uppercase;
+        margin-bottom: 0.5em;
+    }
+
+    .sidebar .menu {
+        margin: 0 -1rem;
+        position: fixed;
+    }
+
+    .sidebar .menu .menu-item {
+        display: block;
+        padding: 1em;
+        color: #FFF;
+        text-decoration: none;
+        margin-bottom: 10%;
+        margin-left: 5%;
+        transition: 0.2s linear;
+        font-size: 2.5vh;
+        font-weight: 100;
+    }
+
+    .sidebar-icons {
+        height: 5vh ;
+        width: 3vw;
+        margin-left: 5% ;
+        margin-top: 6%;
+    }
+    
+    .sidebar .menu .menu-item:hover {
+        color: #FDB515;
+        border-right: 5px solid #FDB515;
+    }
+
+    .sidebar .menu .menu-item:hover {
+        border-right: 5px solid #FDB515;
+    }
+
+    @media (max-width: 600px) {
+        .sidebar {
+            max-width: 200px;
+        }
+    }
+
+    @media (max-width: 850px) {
+        .menu-toggle {
+            display: block;
+        }
+        .content {
+            padding-top: 8rem;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            height: 100vh;
+            width: 100%;
+            max-width: 200px;
+            transition: none;
+        }
+        
+        .sidebar.is-active {
+            left: 0;
+            transition: 0.2s linear;
+        }
+
+        .sidebar .menu .menu-item:hover {
+            border-right: 5px solid #FDB515;
+        }
+    
+    }
+    
+        .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        }
+
+        /* The slider */
+        .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        input:checked + .slider {
+        background-color: black;
+        }
+
+        input:focus + .slider {
+        box-shadow: 0 0 1px black;
+        }
+
+        input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+        border-radius: 34px;
+        }
+
+        .slider.round:before {
+        border-radius: 50%;
+        }
+</style>
+
+<!-- SIDEBAR CODE -->
+
 </head>
 <body>
     <div class="app">
@@ -13,307 +177,110 @@
 			</div>
 		</div>
         
-        <!-- THIS IS THE SIDEBAR CODE -->
-        <style>
+        <aside class="sidebar">
 
-            .sidebar {
-                flex: 1 1 0;
-                max-width: 245px;
-                min-width: 245px;
-                padding: 2rem 1rem 1rem 1rem;
-                background-color: #003262;
-                border-color: black;
-            }
-
-            .sidebar h3 {
-                color: #707793;
-                font-size: 0.90rem;
-                text-transform: uppercase;
-                margin-bottom: 0.5em;
-            }
-
-            .sidebar .menu {
-                margin: 0 -1rem;
-                position: fixed;
-            }
-
-            .sidebar .menu .menu-item {
-                display: block;
-                padding: 1em;
-                color: #FFF;
-                text-decoration: none;
-                transition: 0.2s linear;
-                margin: 5%;
-                font-size: 2.5vh;
-                font-weight: 100;
-            }
-
-            .sidebar .menu .menu-item:hover,
-            .sidebar .menu .menu-item.is-active {
-                color: #FDB515;
-                border-right: 5px solid #FDB515;
-            }
-
-            .sidebar .menu .menu-item:hover {
-                border-right: 5px solid #FDB515;
-            }
-
-            .content {
-                flex: 1 1 0;
-                padding: 2rem;
-            }
-
-            .content h1 {
-                color: #3C3F58;
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .content p {
-                color: #707793;
-            }
-
-            @media (max-width: 600px) {
-                .sidebar {
-                    max-width: 200px;
-                }
-            }
-
-            @media (max-width: 850px) {
-                .menu-toggle {
-                    display: block;
-                }
-                .content {
-                    padding-top: 8rem;
-                }
-                .sidebar {
-                    position: fixed;
-                    top: 0;
-                    left: -300px;
-                    height: 100vh;
-                    width: 100%;
-                    max-width: 200px;
-                    transition: 0.2s linear;
-                }
-                
-                .sidebar.is-active {
-                    left: 0;
-                }
-                
-                .profile-picture {
-                width: 100%;
-                height: 100%;
-                border-radius: 9999px;
-                }
-            }
-            .posts_container {
-                max-width: 90vw;
-                font-family: sans-serif;
-                margin: 0 auto;
-                margin-left: 7%;
-            }
-            .post img {
-                width: 100%;
-                height: 180px;
-                object-fit: cover;
-            }
-            .Post_container {
-                display: grid;
-            }
-
-            .popup {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        background-color: #003262; /* Change this to the desired blue color */
-        color: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-    }
-
-    /* Button to close the pop-up */
-    .popup-close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-    }
-            /* Style for the point bar */
-    .point-bar {
-        width: 100%;
-        height: 10px;
-        background-color: #ccc; /* Background color of the point bar */
-        margin-top: 10px;
-        border-radius: 5px;
-    }
-
-    /* Style for the filled points in the point bar */
-    .points {
-        height: 100%;
-        width: 50%; /* This value will determine the fill percentage */
-        background-color: #fddb15; /* Color of the filled points */
-        border-radius: 5px;
-    }
-        </style>
-        
-		<aside class="sidebar">
-		
-			<nav class="menu">
+            <nav class="menu">
                 <div style="display: flex;">
-                    <img src="../static/amir.png" style="height: 5vh ;width: 3vw;margin-left: 5% ; margin-top: 9%; border-radius: 100%;">
+                    <img src="../static/amir.png" class= "sidebar-icons" style="border-radius: 100%;">
                 <a href="profile-page.html" class="menu-item">Profile</a>
                 </div>
-                <div style="display: flex;">
-                    <img src="../static/home-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 7%;" >
-				    <a href="hub.html" class="menu-item is-active">Home</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="static/new-post-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-				<a href="makeapost.html" class="menu-item">New Post</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="static/reward-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-				<a href="rewards.html" class="menu-item">Rewards</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="static/save-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-				<a href="#" class="menu-item">Saved</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="static/settings-icon.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 8%;" >
-                <a href="#" class="menu-item">Settings</a>
-                </div>
-                <div style="display: flex;">
-                    <img src="static/most-liked.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;" >    
-                <a href="#" class="menu-item" style="padding-left: 4%;">Most Liked Posts</a>
+                <div style="display: flex;"">
+                    <img src="../static/home-icon.png" class="sidebar-icons" >
+                    <a href="#" class="menu-item is-active">Home</a>
                 </div>
                 <div style="display: flex;"">
-                    <img src="static/meter.png" style="height: 5vh ;width: 3vw; margin-left: 5%; margin-top: 9%;">    
-                    <a href="#" class="menu-item" style="margin-left: 2%;"> RSF Meter </a>
-                </div>       
+                    <img src="static/new-post-icon.png" class="sidebar-icons" style="margin-top: 13%;" >
+                <a href="makeapost.html" class="menu-item">New Post</a>
+                </div>
+                <div style="display: flex;"" >
+                    <img src="static/reward-icon.png" class="sidebar-icons reward-icon">
+                    <a href="rewards.html" class="menu-item" style="margin-left: 5%;">Rewards</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/most-liked.png" class="sidebar-icons" >
+                <a href="#" class="menu-item">Saved</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/meter.png" class="sidebar-icons" style="margin-top: 13%;">    
+                    <a href="#" class="menu-item"> RSF Meter </a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/instacart.png" class="sidebar-icons">
+                <a href="#" class="menu-item">Instacart</a>
+                </div>
+                <div style="display: flex;">
+                    <img src="static/settings-icon.png" class="sidebar-icons">
+                <a href="settings-page.html" class="menu-item"> Settings </a>
+                </div>
+                <div class="menu-item" style="display: flex;  margin-left: 4%; padding-left: 0; width: 100%; padding-top: 5%; padding-right: 0%; padding-bottom: 5%;">       
+                    <label class="switch" style="margin-right: 5%;">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"> </span>
+                    </label>
+                    <div style="margin-top: 1%; margin-left: 2%; ">
+                    Dark Mode
+                    </div>
+                </div>
                 <div class="scraped-content"> </div>                         
-			</nav>
-		</aside>
+            </nav>
+        </aside>
 
-        <script>
-            const menu_toggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-    
-            menu_toggle.addEventListener('click', () => {
-                menu_toggle.classList.toggle('is-active');
-                sidebar.classList.toggle('is-active');
-            });
-        </script>
-
-        <!-- THIS IS THE SIDEBAR CODE -->
+        <!-- SIDEBAR CODE -->
     </div>
 
     <div class="profile">
-        <h1>🏆Rewards🏆</h1>
+        <h1>User Profile</h1>
         <div class="profile-info">
             <!-- Profile picture and user info -->
         </div>
         
         <div class="badges">
-            <h2>Your current points</h2>
-            <p id="current-points">0 points</p>
-            <div class="point-bar">
-                <div class="points"></div>
+            <h2>Badges</h2>
+            <div class="badge-item">
+                <img src="badge1.png" alt="Badge 1">
+                <p>Language Beginner</p>
             </div>
+            <div class="badge-item">
+                <img src="badge2.png" alt="Badge 2">
+                <p>Intermediate Linguist</p>
+            </div>
+            <!-- Add more badge items as needed -->
         </div>
-
-        <div class="roadmap">
-            <h2>Missions</h2>
-            <ul>
-                <li>make a new post (10 points)</li>
-                <li>like 10 posts (10 points)</li>
-                <li>wrtie 10 points (10 points)</li>
-                <!-- Add more reward items as needed -->
-            </ul>
-        </div>        
         
         <div class="roadmap">
-            <h2>More Rewards</h2>
+            <h2>Rewards</h2>
             <ul>
-                <li>Amy's kiss (1000 points)</li>
-                <li>Ricky's hug (1000 points)</li>
-                <li>Earn bonus points (10 points)</li>
+                <li>Unlock new lessons</li>
+                <li>Access advanced topics</li>
+                <li>Earn bonus points</li>
                 <!-- Add more reward items as needed -->
             </ul>
         </div>
-        <div class="roadmap">
-            <h2>Available Rewards</h2>
-            <form id="rewards-form">
-                <div class="reward-item">
-                    <label for="reward1">
-                        <input type="radio" id="reward1" name="reward" value="10"> <!-- Assign a value to represent the points needed -->
-                        Reward 1 (10 points)
-                    </label>
-                </div>
-                <div class="reward-item">
-                    <label for="reward2">
-                        <input type="radio" id="reward2" name="reward" value="20"> <!-- Assign a value to represent the points needed -->
-                        Reward 2 (20 points)
-                    </label>
-                </div>
-                <!-- Add more reward items as needed -->
-            </form>
-        </div>
         
-        <button id="claim-button" class="claim-button">Claim Reward</button>
+        <button class="claim-button">Claim Reward</button>
     </div>
 
-    <div class="popup">
-        <span class="popup-close">&times;</span>
-        <p>🎉Congrats! Your reward has been sent to your email!🎉</p>
-    </div>
 
-    <script>
-        const claimButton = document.getElementById('claim-button');
-        const popup = document.querySelector('.popup');
-        const popupCloseButton = document.querySelector('.popup-close');
+        <!-- SIDEBAR CODE -->
+
+        <script>
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const bodyElement = document.body;
+            const buttonElement = document.querySelector('#darkModeToggle')
+            const menuItems = document.querySelectorAll('.menu-item')
     
-        claimButton.addEventListener('click', () => {
-            // Simulate sending rewards to email (replace this with actual code to send the email)
-            sendRewardEmail();
+            darkModeToggle.addEventListener('click', () => {
+                bodyElement.classList.toggle('dark-mode');
+                buttonElement.classList.toggle('dark-mode');
+                menuItems.forEach(item => {
+                    item.classList.toggle('dark-mode');
+                });
+            });
     
-            // Show the pop-up message
-            popup.style.display = 'block';
-        });
+        </script>
     
-        popupCloseButton.addEventListener('click', () => {
-            // Close the pop-up when the close button is clicked
-            popup.style.display = 'none';
-        });
+        <!-- SIDEBAR CODE -->
     
-        function sendRewardEmail() {
-            // Replace this with your actual code to send the email
-            // You might use an AJAX request or a fetch to communicate with a backend
-            // to send the email containing the rewards.
-        }
-
-        // Initialize the user's initial points (replace with your actual value)
-let userPoints = 50;
-const pointsBar = document.querySelector('.points');
-const currentPointsElement = document.getElementById('current-points');
-
-// Set the initial value of the current points element
-currentPointsElement.textContent = `${userPoints} points`;
-
-// ... Your other JavaScript code ...
-
-claimButton.addEventListener('click', () => {
-    // ... Your existing code ...
-
-    // Update the current points element after claiming a reward
-    currentPointsElement.textContent = `${userPoints} points`;
-});
-
-    </script>
     
 </body>
 </html>
