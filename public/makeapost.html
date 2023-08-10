@@ -6,21 +6,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Responsive Navbar</title>
 	<link rel="stylesheet" href="mstyles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 
-    <!-- SIDEBAR CODE -->
-    
-    <style>
-
-        body {
-            transition: background-color 0.3s ease;
-            background-color: #ffffff; /* Light mode background color */
-            color: #000000; /* Light mode text color */
-        }
-
-        body.dark-mode {
-            background-color: #111111; /* Dark mode background color */
-            color: #ffffff; /* Dark mode text color */
-        }
+</head>
+<body>
+	<div class="app">
+		<div class="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+			</div>
+		</div>
+        
+        <!-- THIS IS THE SIDEBAR CODE -->
+        <style>
 
         .sidebar {
             flex: 1 1 0;
@@ -233,59 +231,74 @@
         <!-- SIDEBAR CODE -->
 
     </div>
-      <!-- Make a Post Section -->
+      <!-- Make a Post Section
       <div class="content">
         <div class="make-post-container">
-            <!-- ... (other content) ... -->
             <div class="upload-area">
                 <p>Drag and drop an image here</p>
             </div>
             <textarea class="caption-input" placeholder="Write a caption..."></textarea>
+            <br>
             <button class="post-button" id="postButton">Post</button>
             <button class="add-ingredients-button">Add Ingredients</button>
+            <button class="add-nutrition-button">Add Nutrition</button>
+        </div>
+    </div> -->
+    
+    <div class="content">
+        <div class="make-post-container">
+            <p style = "color:#003262; font-size: 18px; font-weight:bold;">Make a post </p>
+            <br>
+            <div class="upload-content">
+                <div class="upload-area">
+                    <p>Drag and drop an image here</p>
+                </div>
+                <div class="caption-input-container">
+                    <textarea class="caption-input" placeholder="Write a caption..."></textarea>
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="add-ingredients-button">Add Ingredients</button>
+                <button class="add-nutrition-button">Add Nutrition</button>
+                <button class="post-button" id="postButton">Post</button>
+            </div>
         </div>
     </div>
+    
  
     <script>
+        // Code for handling the image upload and post button
+        const uploadArea = document.querySelector('.upload-area');
+        const postButton = document.querySelector('.post-button');
 
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
 
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
 
-    // Code for handling the image upload and post button
-    const uploadArea = document.querySelector('.upload-area');
-    const postButton = document.querySelector('.post-button');
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
 
-    uploadArea.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        uploadArea.classList.add('dragover');
-    });
+            const file = e.dataTransfer.files[0];
+            if (file.type.startsWith('image/')) {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                img.style.maxWidth = '100%';
+                uploadArea.innerHTML = '';
+                uploadArea.appendChild(img);
+            } else {
+                uploadArea.innerHTML = '<p>Unsupported file type</p>';
+            }
+        });
 
-    uploadArea.addEventListener('dragleave', () => {
-        uploadArea.classList.remove('dragover');
-    });
-
-    uploadArea.addEventListener('drop', (e) => {
-        e.preventDefault();
-        uploadArea.classList.remove('dragover');
-
-        const file = e.dataTransfer.files[0];
-        if (file.type.startsWith('image/')) {
-            const img = document.createElement('img');
-            img.src = URL.createObjectURL(file);
-            img.style.maxWidth = '100%';
-            uploadArea.innerHTML = '';
-            uploadArea.appendChild(img);
-        } else {
-            uploadArea.innerHTML = '<p>Unsupported file type</p>';
-        }
-    });
-
-    postButton.addEventListener('click', () => {
-        const img = uploadArea.querySelector('img');
-        if (img) {
-            // Here you can perform the post action
-            alert('Image posted!');
-        }
-    });
+        postButton.addEventListener('click', () => {
+            window.location.href = "hub2.html";
+        });
     </script>
 
 
