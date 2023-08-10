@@ -190,7 +190,11 @@
        
 		<aside class="sidebar">
       <nav class="menu">
-
+                <div style="display: flex;">
+                    <div class="user-info">
+                        <span style="color:white; margin-left: 2px;">Welcome, <span id="welc"></span>! </span>
+                    </div>
+                </div>
                 <div style="display: flex;">
                     <img src="../static/amir.png" class= "sidebar-icons" style="border-radius: 100%;">
                 <a href="profile-page.html" class="menu-item">Profile</a>
@@ -209,7 +213,7 @@
                 </div>
                 <div style="display: flex;">
                     <img src="static/most-liked.png" class="sidebar-icons" >
-                <a href="#" class="menu-item">Saved</a>
+                <a href="savedpost.html" class="menu-item">Saved</a>
                 </div>
                 <div style="display: flex;">
                     <img src="static/meter.png" class="sidebar-icons" style="margin-top: 13%;">    
@@ -270,10 +274,6 @@
                     </div>
                     <div class="text-muted" style="margin-left: 7px">view all 0 comments</div>
                 </div>
-                <script>
-                    // var show = localStorage.getItem(appearance)
-                    // document.getElementById("new-post").style.display = show
-                </script>
                 <div class = "post">
                     <div class="post-head">
                         <div class="user">
@@ -411,21 +411,21 @@
 	</div>
     
 	<script>
-		// const menu_toggle = document.querySelector('.menu-toggle');
-		// const sidebar = document.querySelector('.sidebar');
+		const menu_toggle = document.querySelector('.menu-toggle');
+		const sidebar = document.querySelector('.sidebar');
 
 
-		// menu_toggle.addEventListener('click', () => {
-		// 	menu_toggle.classList.toggle('is-active');
-		// 	sidebar.classList.toggle('is-active');
-		// });
+		menu_toggle.addEventListener('click', () => {
+			menu_toggle.classList.toggle('is-active');
+			sidebar.classList.toggle('is-active');
+		});
 
-     // // Retrieve the user's first name from local storage
-     // const userFirstName = localStorage.getItem("userFirstName");
+       // Retrieve the user's first name from local storage
+       const userFirstName = localStorage.getItem("username");
 
-      // // Display the user's name in the toolbar
-      // const userNameElement = document.getElementById("userName");
-      // userNameElement.textContent = userFirstName;
+        // Display the user's name in the toolbar
+        const userNameElement = document.getElementById("welc");
+        userNameElement.textContent = userFirstName;
 
 
 	</script>
