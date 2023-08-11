@@ -1,10 +1,13 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    min-height: 100vh;
-    background-color: #f7f7f7;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.app {
+	display: flex;
+	min-height: 100vh;
 }
 
 .upload-container {
@@ -32,12 +35,13 @@ body {
 .upload-area {
     border: 2px dashed #e0e0e0;
     padding: 20px;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 300px;
     cursor: pointer;
     border-radius: 5px;
     background-color: #fafafa;
     margin-right: 20px;
+    overflow: hidden; /* Clip content that overflows */
 }
 
 .upload-area p {
@@ -50,19 +54,45 @@ body {
     border-color: #007bff;
     background-color: #f0faff;
 }
+.upload-caption-container {
+    display: flex;
+    align-items: flex-start; /* Align items to the start of the flex container */
+}
 
-.caption-area {
-    flex: 1;
+
+/* Your existing styles */
+
+.upload-content {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.upload-caption-container {
+    flex: 1; /* Allow the caption input to take up available space */
+}
+
+.caption-input-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-left: 20px; /* Add some space between the upload area and the caption input */
 }
 
 .caption-input {
-    width: 100%;
     padding: 10px;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
-    margin-bottom: 20px;
     resize: vertical;
+    padding: 20px;
+    width: 800px;
+    height: 300px;
 }
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Spread buttons horizontally */
+    margin-top: 10px;
+}
+
 
 .post-button {
     padding: 10px 20px;
@@ -72,6 +102,7 @@ body {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .post-button:hover {
@@ -217,7 +248,7 @@ body {
 }
 
 .content {
-    flex: 1 1 0;
+    flex: 1;
     padding: 2rem;
 }
 
@@ -307,3 +338,20 @@ body {
 .add-ingredients-button:hover {
     background-color: #0056b3;
 }
+
+.add-nutrition-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-nutrition-button:hover {
+    background-color: #0056b3;
+}
+
+

@@ -5,169 +5,166 @@
     <link rel="stylesheet" type="text/css" href="rstyles.css">
     <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 
-<!-- SIDEBAR CODE -->
-    
-<style>
 
-    body {
-        transition: background-color 0.3s ease;
-        background-color: #ffffff; /* Light mode background color */
-        color: #000000; /* Light mode text color */
-    }
+    <style>
 
-    body.dark-mode {
-        background-color: #111111; /* Dark mode background color */
-        color: #ffffff; /* Dark mode text color */
-    }
+        body {
+            transition: background-color 0.3s ease;
+            background-color: #ffffff; /* Light mode background color */
+            color: #000000; /* Light mode text color */
+        }
 
-    .sidebar {
-        flex: 1 1 0;
-        max-width: 245px;
-        min-width: 245px;
-        padding: 2rem 1rem 1rem 1rem;
-        background-color: #003262;
-        border-color: black;
-    }
+        body.dark-mode {
+            background-color: #111111; /* Dark mode background color */
+            color: #ffffff; /* Dark mode text color */
+        }
 
-    .sidebar h3 {
-        color: #707793;
-        font-size: 0.90rem;
-        text-transform: uppercase;
-        margin-bottom: 0.5em;
-    }
-
-    .sidebar .menu {
-        margin: 0 -1rem;
-        position: fixed;
-    }
-
-    .sidebar .menu .menu-item {
-        display: block;
-        padding: 1em;
-        color: #FFF;
-        text-decoration: none;
-        margin-bottom: 10%;
-        margin-left: 5%;
-        transition: 0.2s linear;
-        font-size: 2.5vh;
-        font-weight: 100;
-    }
-
-    .sidebar-icons {
-        height: 5vh ;
-        width: 3vw;
-        margin-left: 5% ;
-        margin-top: 6%;
-    }
-    
-    .sidebar .menu .menu-item:hover {
-        color: #FDB515;
-        border-right: 5px solid #FDB515;
-    }
-
-    .sidebar .menu .menu-item:hover {
-        border-right: 5px solid #FDB515;
-    }
-
-    @media (max-width: 600px) {
         .sidebar {
-            max-width: 200px;
+            flex: 1 1 0;
+            max-width: 245px;
+            min-width: 160px;
+            padding: 2rem 1rem 1rem 1rem;
+            background-color: #003262;
+            border-color: black;
         }
-    }
 
-    @media (max-width: 850px) {
-        .menu-toggle {
-            display: block;
+        .sidebar h3 {
+            color: #707793;
+            font-size: 0.90rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5em;
         }
-        .content {
-            padding-top: 8rem;
-        }
-        .sidebar {
+
+        .sidebar .menu {
+            margin: 0 -1rem;
             position: fixed;
-            top: 0;
-            left: -300px;
-            height: 100vh;
-            width: 100%;
-            max-width: 200px;
-            transition: none;
+        }
+
+        .sidebar .menu .menu-item {
+            display: block;
+            padding: 1em;
+            color: #FFF;
+            text-decoration: none;
+            margin-bottom: 10%;
+            margin-left: 5%;
+            transition: 0.2s linear;
+            font-size: 2.5vh;
+            font-weight: 100;
+        }
+
+        .sidebar-icons {
+            height: 5vh ;
+            width: 3vw;
+            margin-left: 5% ;
+            margin-top: 6%;
         }
         
-        .sidebar.is-active {
-            left: 0;
-            transition: 0.2s linear;
+        .sidebar .menu .menu-item:hover {
+            color: #FDB515;
+            border-right: 5px solid #FDB515;
         }
 
         .sidebar .menu .menu-item:hover {
             border-right: 5px solid #FDB515;
         }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .menu-toggle {
+                display: block;
+            }
+            .content {
+                padding-top: 8rem;
+            }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -300px;
+                height: 100vh;
+                width: 100%;
+                max-width: 200px;
+                transition: none;
+            }
+            
+            .sidebar.is-active {
+                left: 0;
+                transition: 0.2s linear;
+            }
+
+            .sidebar .menu .menu-item:hover {
+                border-right: 5px solid #FDB515;
+            }
+        
+        }
+        
+            .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            }
+
+            /* Hide default HTML checkbox */
+            .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            }
+
+            /* The slider */
+            .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            input:checked + .slider {
+            background-color: black;
+            }
+
+            input:focus + .slider {
+            box-shadow: 0 0 1px black;
+            }
+
+            input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            }
+
+            /* Rounded sliders */
+            .slider.round {
+            border-radius: 34px;
+            }
+
+            .slider.round:before {
+            border-radius: 50%;
+            }
+    </style>
     
-    }
-    
-        .switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-        }
-
-        /* Hide default HTML checkbox */
-        .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-        }
-
-        /* The slider */
-        .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-        }
-
-        .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-        }
-
-        input:checked + .slider {
-        background-color: black;
-        }
-
-        input:focus + .slider {
-        box-shadow: 0 0 1px black;
-        }
-
-        input:checked + .slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-        }
-
-        /* Rounded sliders */
-        .slider.round {
-        border-radius: 34px;
-        }
-
-        .slider.round:before {
-        border-radius: 50%;
-        }
-</style>
-
-<!-- SIDEBAR CODE -->
-
 </head>
 <body>
     <div class="app">
@@ -180,13 +177,23 @@
         <aside class="sidebar">
 
             <nav class="menu">
+
+                <div style="display: flex;">
+                    <p style= "font-family: 'Homemade Apple', cursive; color: white; font-size: large; margin-left: 55px ;"> Beareats</p>
+                </div>
+
+                <!-- <div style="display: flex;">
+                    <div class="user-info">
+                        <span style="color:white; margin-left: 20px;">Welcome, <span id="welc"></span>! </span>
+                    </div>
+                </div> -->
                 <div style="display: flex;">
                     <img src="../static/amir.png" class= "sidebar-icons" style="border-radius: 100%;">
                 <a href="profile-page.html" class="menu-item">Profile</a>
                 </div>
                 <div style="display: flex;"">
                     <img src="../static/home-icon.png" class="sidebar-icons" >
-                    <a href="#" class="menu-item is-active">Home</a>
+                    <a href="hub.html" class="menu-item is-active">Home</a>
                 </div>
                 <div style="display: flex;"">
                     <img src="static/new-post-icon.png" class="sidebar-icons" style="margin-top: 13%;" >
@@ -198,15 +205,15 @@
                 </div>
                 <div style="display: flex;">
                     <img src="static/most-liked.png" class="sidebar-icons" >
-                <a href="#" class="menu-item">Saved</a>
+                <a href="savedpost.html" class="menu-item">Saved</a>
                 </div>
                 <div style="display: flex;">
                     <img src="static/meter.png" class="sidebar-icons" style="margin-top: 13%;">    
-                    <a href="#" class="menu-item"> RSF Meter </a>
+                    <a href="https://safe.density.io/#/displays/dsp_956223069054042646?token=shr_o69HxjQ0BYrY2FPD9HxdirhJYcFDCeRolEd744Uj88e&share&qr" class="menu-item"> RSF Meter </a>
                 </div>
                 <div style="display: flex;">
                     <img src="static/instacart.png" class="sidebar-icons">
-                <a href="#" class="menu-item">Instacart</a>
+                <a href="instacartempty.html" class="menu-item">Instacart</a>
                 </div>
                 <div style="display: flex;">
                     <img src="static/settings-icon.png" class="sidebar-icons">
@@ -225,62 +232,251 @@
             </nav>
         </aside>
 
-        <!-- SIDEBAR CODE -->
-    </div>
+        <script>
+            const menu_toggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+    
+            menu_toggle.addEventListener('click', () => {
+                menu_toggle.classList.toggle('is-active');
+                sidebar.classList.toggle('is-active');
+            });
+        </script>
+
+        <!-- THIS IS THE SIDEBAR CODE -->
+
+
+
+        
+        <!-- THIS IS THE REWARD CODE -->
+        <style>
+
+        .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #003262; /* Change this to the desired blue color */
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    /* Button to close the pop-up */
+    .popup-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+            /* Style for the point bar */
+    .point-bar {
+        width: 100%;
+        height: 10px;
+        background-color: #ccc; /* Background color of the point bar */
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    /* Style for the filled points in the point bar */
+    .points {
+        height: 100%;
+        width: 50%; /* This value will determine the fill percentage */
+        background-color: #fddb15; /* Color of the filled points */
+        border-radius: 5px;
+    }
+        </style>
+
 
     <div class="profile">
-        <h1>User Profile</h1>
+        <h1>🏆Rewards🏆</h1>
         <div class="profile-info">
             <!-- Profile picture and user info -->
         </div>
         
         <div class="badges">
-            <h2>Badges</h2>
-            <div class="badge-item">
-                <img src="badge1.png" alt="Badge 1">
-                <p>Language Beginner</p>
+            <div style= "display:flex; text-align: center; font-size: 3vh; margin-top: 2%; font-weight: bold;">
+                Your current point:
+                
+                <p id="current-points">0 points</p>
             </div>
-            <div class="badge-item">
-                <img src="badge2.png" alt="Badge 2">
-                <p>Intermediate Linguist</p>
+            <div class="point-bar">
+                <div class="points"></div>
             </div>
-            <!-- Add more badge items as needed -->
         </div>
+
+        <div style= "display:flex; text-align: center; justify-content: center; font-size: 3vh; margin-top: 2%; font-weight: bold;">
+            Your Achievements
+        </div>
+        <div class = "rewards-display" style="display: flex; z-index: -1;">
+            <div class = "reward-info" style="margin-left: 0%;">
+                <img src="static/fire-icon.png" class="reward-icon" style="height: 15vh; width: 10vw; margin: 2%; margin-top: 4%; z-index: -1;">
+                <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+            </div>
+            <div class = "reward-info"> 
+                <img src="static/diet-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+            </div>
+            <div class = "reward-info">
+                <img src="static/leaf-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+            </div>
+            <div class = "reward-info">
+                <img src="static/steak-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+            </div>
+            <div class = "reward-info">
+                <img src="static/vegetables-icon.png" class="reward-icon" style="height: 15vh; width: 10vw;margin: 2%; margin-top: 4%">
+                <span class="reward-info-text">Amir has logged in 10 days in a row!</span>
+            </div>
+
+            
+
+        </div>
+
+        <div class="roadmap">
+            <h2>Missions</h2>
+            <ul>
+                <li>make a new post (10 points)</li>
+                <li>like 10 posts (10 points)</li>
+                <li>wrtie 10 points (10 points)</li>
+                <!-- Add more reward items as needed -->
+            </ul>
+        </div>        
         
         <div class="roadmap">
-            <h2>Rewards</h2>
+            <h2>More Rewards</h2>
             <ul>
-                <li>Unlock new lessons</li>
-                <li>Access advanced topics</li>
-                <li>Earn bonus points</li>
+                <li>Blue Badge (600 points)</li>
+                <li>Bear Badge (600 points)</li>
+                <li>RSF weight room free pass (1000 points)</li>
                 <!-- Add more reward items as needed -->
             </ul>
         </div>
+        <div class="roadmap">
+            <h2>Available Rewards</h2>
+            <form id="rewards-form">
+                <div class="reward-item">
+                    <label for="reward1">
+                        <input type="radio" id="reward1" name="reward" value="100"> <!-- Assign a value to represent the points needed -->
+                        Free Jamba Juice acai bowl (100 points)
+                    </label>
+                </div>
+                <div class="reward-item">
+                    <label for="reward2">
+                        <input type="radio" id="reward2" name="reward" value="200"> <!-- Assign a value to represent the points needed -->
+                        Free Mezzo Salad (200 points)
+                    </label>
+                </div>
+                <!-- Add more reward items as needed -->
+            </form>
+        </div>
         
-        <button class="claim-button">Claim Reward</button>
+        <button id="claim-button" class="claim-button">Claim Reward</button>
     </div>
 
+    <div class="popup">
+        <span class="popup-close">&times;</span>
+        <p id="popup-message">🎉Congrats! Your reward has been sent to your email!🎉</p>
+    </div>
+</div>
+    <script>
+        const claimButton = document.getElementById('claim-button');
+        const popup = document.querySelector('.popup');
+        const popupCloseButton = document.querySelector('.popup-close');
+    
+        claimButton.addEventListener('click', () => {
+            // Simulate sending rewards to email (replace this with actual code to send the email)
+            sendRewardEmail();
+    
+            // Show the pop-up message
+            popup.style.display = 'block';
+        });
+    
+        popupCloseButton.addEventListener('click', () => {
+            // Close the pop-up when the close button is clicked
+            popup.style.display = 'none';
+        });
+    
+        function sendRewardEmail() {
+            // Replace this with your actual code to send the email
+            // You might use an AJAX request or a fetch to communicate with a backend
+            // to send the email containing the rewards.
+        }
 
-        <!-- SIDEBAR CODE -->
+// Initialize the user's initial points (replace with your actual value)
+let userPoints = 500; // Initial value
+const maxPoints = 1000; // Maximum points value
 
-        <script>
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const bodyElement = document.body;
-            const buttonElement = document.querySelector('#darkModeToggle')
-            const menuItems = document.querySelectorAll('.menu-item')
-    
-            darkModeToggle.addEventListener('click', () => {
-                bodyElement.classList.toggle('dark-mode');
-                buttonElement.classList.toggle('dark-mode');
-                menuItems.forEach(item => {
-                    item.classList.toggle('dark-mode');
-                });
-            });
-    
-        </script>
-    
-        <!-- SIDEBAR CODE -->
-    
+// Calculate the percentage of user's points relative to the maximum points
+const pointsPercentage = (userPoints / maxPoints) * 100;
+
+// Select the points bar and set its width
+const pointsBar = document.querySelector('.points');
+pointsBar.style.width = `${pointsPercentage}%`;
+
+// Set the initial value of the current points element
+const currentPointsElement = document.getElementById('current-points');
+currentPointsElement.textContent = `${userPoints} points`;
+
+claimButton.addEventListener('click', () => {
+    // Simulate sending rewards to email (replace this with actual code to send the email)
+    sendRewardEmail();
+
+    // Deduct points based on the selected reward only when the button is clicked
+    const selectedReward = document.querySelector('input[name="reward"]:checked');
+    if (selectedReward) {
+        const rewardValue = parseInt(selectedReward.value);
+        updatePoints(rewardValue);
+    }
+
+    // Show the pop-up message
+    popup.style.display = 'block';
+});
+
+    // Function to update points based on selected reward value
+    function updatePoints(rewardValue) {
+        if (userPoints >= rewardValue) {
+        userPoints -= rewardValue;} // Deduct the reward value from user's points
+        
+        // Ensure the user's points don't go below 0
+        userPoints = Math.max(userPoints, 0);
+        
+        currentPointsElement.textContent = `${userPoints} points`;
+
+        // Update the width of the point bar based on the user's points value
+        const pointsPercentage = (userPoints / maxPoints) * 100;
+        pointsBar.style.width = `${pointsPercentage}%`;
+    }
+
+    claimButton.addEventListener('click', () => {
+    // Simulate sending rewards to email (replace this with actual code to send the email)
+    sendRewardEmail();
+
+    // Deduct points based on the selected reward only when the button is clicked
+    const selectedReward = document.querySelector('input[name="reward"]:checked');
+    if (selectedReward) {
+        const rewardValue = parseInt(selectedReward.value);
+        
+        if (userPoints >= rewardValue) {
+            // updatePoints(rewardValue);
+            // Show the pop-up message for successful claim
+            popupMessage.textContent = "🎉Congrats! Your reward has been sent to your email!🎉";
+        } else {
+            // Show the pop-up message for insufficient points
+            const popupMessageElement = document.getElementById('popup-message');
+            popupMessageElement.textContent = "I'm sorry, but you need more points to claim the reward.";
+        }
+    }
+
+    // Show the pop-up
+    popup.style.display = 'block';
+});
+
+
+    </script>
     
 </body>
 </html>

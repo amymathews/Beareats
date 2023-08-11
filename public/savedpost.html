@@ -5,12 +5,29 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Responsive Navbar</title>
-	<link rel="stylesheet" href="mstyles.css" />
+	<link rel="stylesheet" href="./hub.css" />
     <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+
 
     <!-- SIDEBAR CODE -->
     
     <style>
+
+        .savedposts-title {
+            color: dark blue;
+            margin-bottom: 40px;
+            font-size: 24px;
+            position: relative;
+        }
+        .savedposts-title::after {
+            content: “”;
+            position: absolute;
+            height: 2px;
+            width: 100px;
+            background: black;
+            left: 0;
+            bottom: -10px;
+        }
 
         body {
             transition: background-color 0.3s ease;
@@ -176,9 +193,11 @@
     
     <!-- SIDEBAR CODE -->
 
+    
+
 </head>
 <body>
-    <div class="app">
+	<div class="app">
 		<div class="menu-toggle">
 			<div class="hamburger">
 				<span></span>
@@ -193,8 +212,8 @@
                 <div style="display: flex;">
                     <p style= "font-family: 'Homemade Apple', cursive; color: white; font-size: large; margin-left: 55px ;"> Beareats</p>
                 </div>
-<!-- 
-                <div style="display: flex;">
+
+                <!-- <div style="display: flex;">
                     <div class="user-info">
                         <span style="color:white; margin-left: 20px;">Welcome, <span id="welc"></span>! </span>
                     </div>
@@ -240,89 +259,110 @@
                     Dark Mode
                     </div>
                 </div>
-                <div class="scraped-content"> </div>                         
+                <div class="scraped-content"> </div>                        
             </nav>
         </aside>
 
+
         <!-- SIDEBAR CODE -->
 
-    
-    <div class="content">
-        <div class="make-post-container">
-            <p style = "color:#003262; font-size: 18px; font-weight:bold;">Make a post </p>
-            <br>
-            <div class="upload-content">
-                <div class="upload-area">
-                    <p>Drag and drop an image here</p>
+        <h2 class = “savedposts-title” style="margin-top:20px; margin-left:20px;"> Saved Posts </h2>
+		<main class="posts_container">
+            <div class="posts">
+                <div class = "post" id="new-post" style="display: none;">
+                    <a href="#"></a>
+                    <div class="post-head">
+                        <div class="user">
+                            <div class="profile-photo" style="width: 60px;">
+                                <a href="#">
+                                    <img src="static/amir.png" style="height: 60px ;width: 60px; margin-left: 5% ; margin-top: 9%; border-radius: 100%; ">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 style="margin-left: 7px; margin-top: 17px;">Amir Shaker</h3>
+                                <small style="margin-left: 7px; margin-top: 17px;">Berkeley, Just now</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="./static/food1.png" alt="postpicture">
+                    </div>
+                    <div class="action-buttons">
+                        <div class="interaction-buttons" >
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-dots"></i></span>
+                        </div>
+                    </div>
+                    <div class="caption">
+                        <p style="margin-left: 7px;"> <b>Amir Shaker</b> Look at my lunch guys!!!</p>
+                    </div>
+                    <div class="text-muted" style="margin-left: 7px">view all 0 comments</div>
                 </div>
-                <div class="caption-input-container">
-                    <textarea class="caption-input" placeholder="Write a caption..."></textarea>
+                <div class = "post" style="margin-top:50px;">
+                    <div class="post-head">
+                        <div class="user">
+                            <div class="profile-photo" style="width: 60px;">
+                                <a href="#">
+                                    <img src="static/Amy.png" style="height: 60px ;width: 60px;margin-left: 5% ; margin-top: 9%; border-radius: 100%;" >
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 style="margin-left: 7px; margin-top: 17px;">Amy Mathews</h3>
+                                <small style="margin-left: 7px; margin-top: 17px;">Berkeley, 15 minutes ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <a href="./clickpost.html">
+                            <img src="./images/Beef-and-Broccoli-3-728x1092.jpg" alt="postpicture">
+                        </a>
+                    </div>
+                    <div class="action-buttons">
+                        <div class="interaction-buttons" >
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-dots"></i></span>
+                        </div>
+                    </div>
+                    <div class="liked-by">
+                        <span><img src="static/Ricky.png" style="height: 20px ;width: 20px;margin-left: 5% ; margin-top: 9%; border-radius: 100%;"></span>
+                        <p style="margin-left: 7px;">Liked by Ricky and 33 others</p>
+                    </div>
+                    <div class="caption">
+                        <p style="margin-left: 7px;"> <b>Amy Mathews</b> Look at my lunch guys!!!</p>
+                    </div>
+                    <div class="text-muted" style="margin-left: 7px">view all comments</div>
                 </div>
-            </div>
-            <div class="button-container">
-                <button class="add-ingredients-button">Add Ingredients</button>
-                <button class="add-nutrition-button">Add Nutrition</button>
-                <button class="post-button" id="postButton">Post</button>
-            </div>
-        </div>
-    </div>
-
-</div>
+                </div>
+		</main>
+	</div>
     
- 
-    <script>
-        // Code for handling the image upload and post button
-        const uploadArea = document.querySelector('.upload-area');
-        const postButton = document.querySelector('.post-button');
-
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
-
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-
-            const file = e.dataTransfer.files[0];
-            if (file.type.startsWith('image/')) {
-                const img = document.createElement('img');
-                img.src = URL.createObjectURL(file);
-                img.style.maxWidth = '100%';
-                uploadArea.innerHTML = '';
-                uploadArea.appendChild(img);
-            } else {
-                uploadArea.innerHTML = '<p>Unsupported file type</p>';
-            }
-        });
-
-        postButton.addEventListener('click', () => {
-            window.location.href = "hub2.html";
-        });
-    </script>
+	<script>
+		const menu_toggle = document.querySelector('.menu-toggle');
+		const sidebar = document.querySelector('.sidebar');
 
 
-    <!-- badges -->
+		menu_toggle.addEventListener('click', () => {
+			menu_toggle.classList.toggle('is-active');
+			sidebar.classList.toggle('is-active');
+		});
 
-    <script>
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const bodyElement = document.body;
-        const buttonElement = document.querySelector('#darkModeToggle')
-        const menuItems = document.querySelectorAll('.menu-item')
+       // Retrieve the user's first name from local storage
+       const userFirstName = localStorage.getItem("username");
 
-        darkModeToggle.addEventListener('click', () => {
-            bodyElement.classList.toggle('dark-mode');
-            buttonElement.classList.toggle('dark-mode');
-            menuItems.forEach(item => {
-                item.classList.toggle('dark-mode');
-            });
-        });
+        // Display the user's name in the toolbar
+        const userNameElement = document.getElementById("welc");
+        userNameElement.textContent = userFirstName;
 
-    </script>
+
+	</script>
+
+    <!-- SIDEBAR CODE -->
+
+    <script src="dark-mode.js"></script>
+    
+
+    <!-- SIDEBAR CODE -->
 
 </body>
+
 </html>
