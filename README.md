@@ -33,12 +33,12 @@ Beareats is a unique platform that aims to foster a sense of community among UC 
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
-### 2a. [Make sure you have Node and npm installed.](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 
+3. [Make sure you have Node and npm installed.](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 
 
 Check to see if you can run  ``$ node -v`` and ``$ npm -v`` (My versions are v16.15.0 for node and 8.10.0 for npm.)
-### 2b. Install the Express module using npm. 
+4. Install the Express module using npm. 
 ex: ``$ npm install express``
-3.. Run the example app using Node:
+5. Run the example app using Node:
 ex: ``$ node App.js``
 
 You should see the message ``Server is running on http://localhost:8000``
