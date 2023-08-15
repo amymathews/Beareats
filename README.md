@@ -43,7 +43,7 @@ ex: ``$ npm install express``
 6. Run the example app using Node:
 ex: ``$ node App.js``
 
-**You should see the message ``Server is running on http://localhost:8000``
+** You should see the message ``Server is running on http://localhost:8000``
 
 ### Usage
 
