@@ -36,12 +36,14 @@ Beareats is a unique platform that aims to foster a sense of community among UC 
 3. [Make sure you have Node and npm installed.](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 
 
 Check to see if you can run  ``$ node -v`` and ``$ npm -v`` (My versions are v16.15.0 for node and 8.10.0 for npm.)
+
 4. Install the Express module using npm. 
 ex: ``$ npm install express``
-5. Run the example app using Node:
+
+6. Run the example app using Node:
 ex: ``$ node App.js``
 
-You should see the message ``Server is running on http://localhost:8000``
+**You should see the message ``Server is running on http://localhost:8000``
 
 ### Usage
 
