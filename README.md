@@ -40,6 +40,8 @@ Beareats is a unique platform that aims to foster a sense of community among UC 
 2. Sign up or log in to create your profile.
 3. Explore the feed, view meal posts, and engage with the community.
 4. Share your own meals, view nutritional information, and connect with friends.
+5. Note: we ask you to use our app in this flow: Login -> Scroll through the hub -> click on "Amy's post" -> interact w the post (comment, like, share) -> click go to Instacart -> interact w page (add ingredients) -> go back to the hub -> make a new post (on sidebar) -> drag and drop picture add comments -> go back to hub -> new post has been created -> go to profile link -> check out rewards and interact.
+
 
 ## Technology Stack
 
